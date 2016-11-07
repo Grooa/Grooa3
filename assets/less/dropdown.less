@@ -1,0 +1,20 @@
+/**
+ * Style for dropdown component.
+ */
+
+*[data-component="dropdown"] {
+	.dropdown {
+		display: none;
+	}
+
+	&.active {
+		.dropdown {
+			display: block;
+		}
+
+		button {
+			background: @frontColor1;
+			color: white;
+		}
+	}
+}

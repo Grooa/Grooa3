@@ -1,0 +1,107 @@
+@ipSpaceGroup: 10px; // used for grouped elements: buttons, forms, etc.
+@ipFormFieldSpace: (@ipSpaceGroup * 2);
+@ipFormTextareaHeight: 10em;
+@ipFormInputMaxWidth: 380px;
+@ipSpaceElement: 1em; // used inside elements, mostly for padding
+
+// Fixing Bootstrap layout
+.form-group { // adding our own bottom margin
+    margin-bottom: @ipFormFieldSpace;
+}
+.form-control,
+.input-group {
+    max-width: @ipFormInputMaxWidth;
+}
+textarea.form-control { // fixing font and height
+    font-family: inherit;
+    height: @ipFormTextareaHeight;
+}
+.progress {
+    margin-bottom: 0;
+}
+
+// Extra elements in forms
+.help-hint { // to be shown on hover
+    display: none;
+    font-size: small;
+    padding: 4px 10px 2px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    z-index: 1;
+}
+.form-group:hover .help-hint { // hint is shown only on hover
+    display: block;
+}
+.help-error {
+    display: none;
+    font-size: small;
+    max-width: @ipFormInputMaxWidth; // to be the same size as controls
+    padding: 4px 10px 2px;
+    width: 100%;
+}
+.has-error .help-error {
+    display: block;
+}
+.captcha {
+    img {
+        display: block;
+        max-width: 100%;
+    }
+}
+.form-group.type-blank {
+    margin-bottom: 0; // removing from flow
+    label {
+        display: none;
+    }
+    .help-error {
+        margin-bottom: @ipFormFieldSpace; // keeping space when visible
+    }
+}
+.form-group.type-submit {
+    label {
+        display: none;
+    }
+}
+
+// File upload
+._file {
+    margin-top: (@ipSpaceGroup / 2);
+    max-width: @ipFormInputMaxWidth; // to be the same size as controls
+    min-height: 20px;
+    padding: (@ipSpaceElement / 2);
+    position: relative;
+    word-wrap: break-word; // to force breaking long filenames
+
+    .close {
+        float: right;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        opacity: 0.2;
+    }
+    .close:hover,
+    .close:focus {
+        text-decoration: none;
+        cursor: pointer;
+        opacity: 0.5;
+    }
+    button.close {
+        padding: 0;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        -webkit-appearance: none;
+    }
+
+    ._error {
+        font-size: small;
+    }
+}
+
+label {
+	display: block;
+}

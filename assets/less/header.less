@@ -1,0 +1,149 @@
+@topNavHeight: 2em;
+@headerHeight: 3.5em;
+@headerBorderHeight: 0.2em;
+
+.hoverable {
+	transition: background 0.2s ease-out;
+	background: white;
+
+	&:hover {
+		background: #ccc;
+	}
+}
+
+header {
+	min-height: @headerHeight;
+	max-width: @pageWidth;
+	border-bottom: @headerBorderHeight solid @frontColor1;
+	margin: 0 auto;
+	padding: 0 0.5em;
+	background: white;
+	box-sizing: border-box;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+	&.above {
+		@media (min-width: @pageWidth) {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	@media (max-width: (0.75 * @pageWidth)) {
+		display: block;
+		padding: 0;
+
+		.logo, .header-controls {
+			margin: 0.2em;
+			display: inline-block;
+		}
+
+		.header-controls {
+			float: right;
+		}
+
+		nav {
+			clear: both;
+			margin-top: 0.5em;
+			text-align: center;
+		}
+	}
+}
+
+.logo {
+	height: @headerHeight - 1em;
+	align-self: center;
+
+	> img {
+		height: 100%;
+	}
+}
+
+
+body.ipHasAdminPanel > header {
+		position: static;
+}
+
+.menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	align-self: flex-end;
+
+
+	li {
+		display: inline-block;
+		margin: 0;
+	}
+
+	a {
+		display: inline-block;
+		padding: (@topNavHeight - 1em)/2;
+		margin: 0;
+		text-decoration: none;
+		color: @frontColor1;
+
+		.hoverable();
+	}
+
+	.active > a {
+		background: @frontColor1;
+		color: white;
+	}
+}
+
+.header-controls {
+	font-size: 0.5;
+	position: relative;
+	list-style: none;
+	padding: 0;
+	margin: 0.6em;
+	order: 1;
+
+	> li {
+		display: inline-block;
+		margin: 0;
+	}
+}
+
+.flag {
+	width: 1.5em;
+	height: 0.9em;
+	vertical-align: middle;
+}
+
+.language-dropdown {
+	position: absolute;
+	z-index: 1000;
+	top: 100%;
+	width: 10em;
+	left: 0;
+	color: white;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border: @lineWidth solid @frontColor1;
+
+	li {
+		display: block;
+		margin: 0;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+		padding: 0.2em;
+
+		.hoverable();
+	}
+
+	.active a {
+		color: white;
+		background: @frontColor1;
+	}
+}

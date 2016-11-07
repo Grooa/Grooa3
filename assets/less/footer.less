@@ -1,0 +1,42 @@
+
+footer {
+	background: @frontColor1;
+	color: white;
+	padding: 1em;
+	text-align: center;
+
+	a {
+		color: inherit;
+	}
+
+	.ipWidget-Text {
+		margin: 0;
+	}
+
+	> div {
+		display: flex;
+		align-items: center;
+
+		> * {
+			flex: 1 1;
+			margin: 1em;
+		}
+
+		> .logo {
+			order: -1;
+		}
+
+		> .social {
+			order: 1;
+		}
+
+		min-height: 3em;
+		max-width: @pageWidth;
+		width: 100%;
+		margin: 0 auto;
+
+		@media (max-width: (0.5 * @pageWidth)) {
+			display: block;
+		}
+	}
+}

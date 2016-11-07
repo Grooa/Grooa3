@@ -1,0 +1,109 @@
+/**
+ * Main less file. Mainly imports other bits and pieces.
+ */
+
+
+// ImpressPages styling
+@import "less/minIpContent/global.less";
+@import "less/minIpContent/block.less";
+@import "less/minIpContent/Columns.less";
+@import "less/minIpContent/Heading.less";
+@import "less/minIpContent/forms.less";
+@import "less/ipContent/ipWidget/Text.less";
+@import "less/ipContent/ipWidget/Image.less";
+
+
+@import "less/Form.less";
+
+.ipWidget-Text {
+	margin-bottom: 2em;
+}
+
+// Use inherited fonts for all elements
+button, input, select, textarea {
+	font-family : inherit;
+	font-size   : 100%;
+}
+
+/*
+@import "less/ipContent/variables.less";
+@import "less/ipContent/forms.less";
+@import "less/ipContent/block.less";
+@import "less/ipContent/breadcrumbs.less";
+
+@import "less/ipContent/ipWidget/Divider.less";
+@import "less/ipContent/ipWidget/File.less";
+@import "less/ipContent/ipWidget/Form.less";
+@import "less/ipContent/ipWidget/Gallery.less";
+@import "less/ipContent/ipWidget/Html.less";
+@import "less/ipContent/ipWidget/Image.less";
+@import "less/ipContent/ipWidget/Missing.less";
+@import "less/ipContent/ipWidget/Text.less";
+@import "less/ipContent/ipWidget/Heading.less";
+*/
+
+@import "less/general.less";
+@import "less/header.less";
+@import "less/footer.less";
+
+@import "less/article.less";
+@import "less/home.less";
+@import "less/main.less";
+
+// Custom widgets
+@import "less/CoverImage.less";
+@import "less/Banner.less";
+@import "less/AsdBlog.less";
+
+@import "less/dropdown.less";
+
+@import "less/divider.less";
+
+// Frame
+
+#ipBlock-main > .ipWidget,
+main > .ipBlock > .ipWidget,
+main > .ipWidget {
+	max-width: @pageWidth - 2em;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+}
+
+
+/*
+@import "less/header.less";
+@import "less/footer.less";
+@import "less/general.less";
+@import "less/button.less";
+
+@import "less/Accordion.less";
+
+// Custom settings
+@pageWidth: 60em;
+
+
+// Colors?
+@frontColor1: #800080;
+@frontColor2: #005000;
+
+// Fontsw
+@ipFontSize: 1rem;
+@ipFontFamily: "Open Sans", sans-serif;
+@ipFontFamilyHeadlines: @ipFontFamily;
+@ipH1Color: @frontColor1;
+@ipH2Color: @frontColor1;
+@ipH3Color: @frontColor1;
+@ipH1FontSize: 2.5em;
+@ipH2FontSize: 1.75em;
+@ipH3FontSize: 1.5em;
+
+@ipButtonBgColor: @frontColor1;
+@ipFormButtonBackground: @ipButtonBgColor;
+
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,700');
+@lineWidth: 0.2rem;
+@frontColor1: #090575;
+@frontColor2: #009627;
+@pageWidth: 60rem;

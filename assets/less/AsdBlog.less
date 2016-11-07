@@ -1,0 +1,39 @@
+.asd-blog-image {
+	float: left;
+	margin: 0.5em 1em;
+
+	@media (max-width: (0.5 * @pageWidth)) {
+		float: none;
+		text-align: center;
+	}
+}
+
+.asdBlog-post {
+	overflow: hidden;
+	border-bottom: 1px solid #cccccc;
+	padding: 1em;
+	margin: 0 1em;
+
+	@media (max-width: @pageWidth) {
+		margin: 0.5em;
+	}
+}
+
+.asdBlog-read-more {
+	clear: left;
+	
+	> a {
+		.button();
+	}
+}
+
+.asdBlog-pagination {
+	a {
+		.button();
+	}
+
+	li.active {
+		.button();
+		.button.disabled();
+	}
+}

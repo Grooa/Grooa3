@@ -1,0 +1,72 @@
+
+.article-image {
+	margin: 0 auto;
+	width: 100%;
+	height: 40vw;
+	background-size: 100% auto !important;
+	background-position: 50% 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.article {
+	p {
+		text-align: justify;
+	}
+
+	article {
+		@media (min-width: @pageWidth) {
+			margin: -10vw auto 0;
+			padding: 1em 0;
+			background: white;
+			max-width: @pageWidth;
+		}
+	}
+}
+
+
+.copyright {
+	text-align: right;
+	font-weight: bold;
+	margin: 2em 0;
+}
+
+@media print {
+	footer, .article-image {
+		display: none;
+	}
+
+	header {
+		position: static;
+		float: right;
+
+		nav, .header-controls {
+			display: none;
+		}
+
+		border: none;
+
+		img {
+			height: 2em;
+			margin-right: 1em;
+		}
+	}
+
+	body {
+		font-size: 12px;
+		font-family: 12pt Georgia, "Times New Roman", serif;
+	}
+
+	p {
+		padding-left: 0;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: black;
+	}
+
+	h1 {
+		font-size: 2em;
+	}
+	
+}
