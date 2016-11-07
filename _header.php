@@ -37,58 +37,58 @@
 
 	<body>
 
-		<header<?php echo empty($headerClass) ? '' : " class=\"$headerClass\""; ?>>
+		<header>
+<?php
+			$result = \Ip\Menu\Helper::getMenuItems('menu2', 1, 1);
 
-			<a href="<?php echo ipHomeUrl() ?>" class="logo">
-				<img
-					src="<?php echo ipThemeUrl('assets/img/logo.svg'); ?>"
-					alt="Grooa">
-			</a>
+			echo ipSlot('menu', array(
+				'items' => $result,
+				'attributes' => array('class' => 'topmenu')
+			));
+?>
 
-			<ul class="header-controls">
+			<ul>
+				<li>
+				<?php if (ipUser()->loggedIn()) { ?>
+						<a href="<?php echo ipGetOption('User.urlAfterRegistration'); ?>"
+						>My page</a>
+				<?php } else { ?>
+						<a href="<?php echo ipRouteUrl('User_login'); ?>"
+						>Log in</a>
+				<?php } ?>
+				</li>
+
 				<li data-component="dropdown">
 					<button class="language-button">
-						<?php $language = ipContent()->getCurrentLanguage(); ?>
-						<img class="flag" src="<?php echo ipThemeUrl(
-							'assets/flags/' . $language->getCode() . '.svg'
-						); ?>" alt="">
-						<?php echo $language->longDescription; ?>
+							<?php $language = ipContent()->getCurrentLanguage(); ?>
+					<img class="flag" src="<?php echo ipThemeUrl(
+						'assets/flags/' . $language->getCode() . '.svg'
+					); ?>" alt="">
+							<?php echo $language->longDescription; ?>
 					</button>
 
 					<?php echo ipSlot('languages', array(
-							'attributes' => array('class' => 'dropdown language-dropdown')
-						)); ?>
+						'attributes' => array('class' => 'dropdown language-dropdown')
+					)); ?>
 				</li>
-
-				<!-- Only works with user module installed -->
-				<?php if (false) { ?>
-				<li>
-				<?php if (ipUser()->loggedIn()) { ?>
-					<a
-						class="button"
-						href="<?php echo ipGetOption('User.urlAfterRegistration'); ?>"
-					>My page</a>
-				<?php } else { ?>
-					<a
-						class="button"
-						href="<?php echo ipRouteUrl('User_login'); ?>"
-					>Log in</a>
-				<?php } ?>
-				</li>
-				<?php } ?>
-
 			</ul>
 
-			<nav>
-<?php
+			<div class="white-header<?php echo empty($headerClass) ? '' : " $headerClass"; ?>">
+				<a href="<?php echo ipHomeUrl() ?>" class="logo">
+					<img
+						src="<?php echo ipThemeUrl('assets/img/logo.svg'); ?>"
+						alt="Grooa">
+				</a>
 
-				$result = \Ip\Menu\Helper::getMenuItems('menu1', 1, 1);
+				<nav>
+	<?php
+					$result = \Ip\Menu\Helper::getMenuItems('menu1', 1, 1);
 
-				echo ipSlot('menu', array(
-					'items' => $result,
-					'attributes' => array('class' => 'menu')
-				));
-?>
-			</nav>
-
+					echo ipSlot('menu', array(
+						'items' => $result,
+						'attributes' => array('class' => 'menu')
+					));
+	?>
+				</nav>
+			</div>
 		</header>

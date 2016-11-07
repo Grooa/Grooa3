@@ -19,10 +19,6 @@ window.addEventListener('load', function () {
 		dropdowns = document.querySelectorAll('*[data-component="dropdown"]');
 
 	forEach.call(dropdowns, function (dropdown) {
-		console.log(dropdown);
 		dropdown.children[0].addEventListener('click', toggle);
 	});
-
-
-	console.log('hei');
 });

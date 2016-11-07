@@ -11,7 +11,7 @@
 	}
 }
 
-header {
+.white-header {
 	min-height: @headerHeight;
 	max-width: @pageWidth;
 	border-bottom: @headerBorderHeight solid @frontColor1;
@@ -19,6 +19,7 @@ header {
 	padding: 0 0.5em;
 	background: white;
 	box-sizing: border-box;
+	box-shadow: @shadow;
 
 	display: flex;
 	justify-content: space-between;
@@ -29,7 +30,7 @@ header {
 			position: absolute;
 			left: 0;
 			right: 0;
-			top: 0;
+			top: 100%;
 		}
 	}
 
@@ -97,20 +98,6 @@ body.ipHasAdminPanel > header {
 	}
 }
 
-.header-controls {
-	font-size: 0.5;
-	position: relative;
-	list-style: none;
-	padding: 0;
-	margin: 0.6em;
-	order: 1;
-
-	> li {
-		display: inline-block;
-		margin: 0;
-	}
-}
-
 .flag {
 	width: 1.5em;
 	height: 0.9em;
@@ -145,5 +132,30 @@ body.ipHasAdminPanel > header {
 	.active a {
 		color: white;
 		background: @frontColor1;
+	}
+}
+
+header {
+	display: block;
+	background: @frontColor1;
+	position: relative;
+	box-shadow: @shadow;
+	text-align: right;
+
+	ul, li, button, span {
+		display: inline-block;
+		padding: 0;
+		margin: 0.2em 0.5em;
+		border: none;
+		background: none;
+	}
+
+	a, button {
+		color: white;
+		text-decoration: none;
+	}
+
+	span {
+		float: right;
 	}
 }
