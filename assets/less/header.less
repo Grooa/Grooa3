@@ -13,13 +13,13 @@
 
 .white-header {
 	min-height: @headerHeight;
-	max-width: @pageWidth;
 	border-bottom: @headerBorderHeight solid @frontColor1;
 	margin: 0 auto;
 	padding: 0 0.5em;
 	background: white;
 	box-sizing: border-box;
 	box-shadow: @shadow;
+	text-align: center;
 
 	display: flex;
 	justify-content: space-between;
@@ -31,26 +31,20 @@
 			left: 0;
 			right: 0;
 			top: 100%;
+			max-width: @pageWidth;
 		}
 	}
 
-	@media (max-width: (0.75 * @pageWidth)) {
-		display: block;
+	@media (max-width: (0.5 * @pageWidth)) {
+		flex-direction: column;
 		padding: 0;
 
-		.logo, .header-controls {
-			margin: 0.2em;
-			display: inline-block;
-		}
-
-		.header-controls {
-			float: right;
+		.logo {
+			margin: 0.5em;
 		}
 
 		nav {
-			clear: both;
-			margin-top: 0.5em;
-			text-align: center;
+			align-self: center;
 		}
 	}
 }
@@ -109,12 +103,12 @@ body.ipHasAdminPanel > header {
 	z-index: 1000;
 	top: 100%;
 	width: 10em;
-	left: 0;
-	color: white;
 	list-style: none;
+	right: 0;
 	padding: 0;
 	margin: 0;
 	border: @lineWidth solid @frontColor1;
+	text-align: left;
 
 	li {
 		display: block;
@@ -125,6 +119,7 @@ body.ipHasAdminPanel > header {
 		display: block;
 		text-decoration: none;
 		padding: 0.2em;
+		color: @frontColor1;
 
 		.hoverable();
 	}
@@ -157,5 +152,9 @@ header {
 
 	span {
 		float: right;
+	}
+
+	@media (max-width: (0.5 * @pageWidth)) {
+		text-align: center;
 	}
 }
