@@ -37,48 +37,58 @@
 
 	<body>
 
-		<header>
-<?php
-			$result = \Ip\Menu\Helper::getMenuItems('menu2', 1, 1);
+		<header<?php echo empty($headerClass) ? '' : " class=\"$headerClass\""; ?>>
 
-			echo ipSlot('menu', array(
-				'items' => $result,
-				'attributes' => array('class' => 'topmenu')
-			));
-?>
+			<!-- Logo -->
+			<a href="<?php echo ipHomeUrl() ?>" class="logo">
+				<img
+					src="<?php echo ipThemeUrl('assets/img/logo.svg'); ?>"
+					alt="Grooa">
+			</a>
 
-			<ul>
-				<li>
-				<?php if (ipUser()->loggedIn()) { ?>
-						<a href="<?php echo ipGetOption('User.urlAfterRegistration'); ?>"
-						>My page</a>
-				<?php } else { ?>
-						<a href="<?php echo ipRouteUrl('User_login'); ?>"
-						>Log in</a>
-				<?php } ?>
-				</li>
+			<div class="right">
+	<?php
+				$result = \Ip\Menu\Helper::getMenuItems('menu2', 1, 1);
 
-				<li data-component="dropdown">
-					<button class="language-button">
+				echo ipSlot('menu', array(
+					'items' => $result,
+					'attributes' => array('class' => 'topmenu')
+				));
+	?>
+
+				<ul>
+	<?php
+				// Hide login button if User module is not active
+				$modules = \Ip\Internal\Plugins\Service::getActivePluginNames();
+				if (in_array('User', $modules)) {
+	?>
+					<li>
+					<?php if (ipUser()->loggedIn()) { ?>
+							<a href="<?php echo ipGetOption('User.urlAfterRegistration'); ?>"
+							>My page</a>
+					<?php } else { ?>
+							<a href="<?php echo ipRouteUrl('User_login'); ?>"
+							>Log in</a>
+					<?php } ?>
+					</li>
+	<?php
+				}
+	?>
+
+					<li data-component="dropdown">
+						<button class="language-button">
 							<?php $language = ipContent()->getCurrentLanguage(); ?>
-					<img class="flag" src="<?php echo ipThemeUrl(
-						'assets/flags/' . $language->getCode() . '.svg'
-					); ?>" alt="">
-							<?php echo $language->longDescription; ?>
-					</button>
+							<img class="flag" src="<?php echo ipThemeUrl(
+								'assets/flags/' . $language->getCode() . '.svg'
+							); ?>" alt="">
+							Language
+						</button>
 
-					<?php echo ipSlot('languages', array(
-						'attributes' => array('class' => 'dropdown language-dropdown')
-					)); ?>
-				</li>
-			</ul>
-
-			<div class="white-header<?php echo empty($headerClass) ? '' : " $headerClass"; ?>">
-				<a href="<?php echo ipHomeUrl() ?>" class="logo">
-					<img
-						src="<?php echo ipThemeUrl('assets/img/logo.svg'); ?>"
-						alt="Grooa">
-				</a>
+						<?php echo ipSlot('languages', array(
+							'attributes' => array('class' => 'dropdown language-dropdown')
+						)); ?>
+					</li>
+				</ul>
 
 				<nav>
 	<?php

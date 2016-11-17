@@ -1,5 +1,4 @@
 @topNavHeight: 2em;
-@headerHeight: 3.5em;
 @headerBorderHeight: 0.2em;
 
 .hoverable {
@@ -11,8 +10,7 @@
 	}
 }
 
-.white-header {
-	min-height: @headerHeight;
+header {
 	border-bottom: @headerBorderHeight solid @frontColor1;
 	margin: 0 auto;
 	padding: 0 0.5em;
@@ -21,7 +19,14 @@
 	box-shadow: @shadow;
 	text-align: center;
 
+	font-size: 0.8em;
+
+	nav {
+		font-size: 1rem;
+	}
+
 	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 	align-items: flex-end;
 
@@ -30,7 +35,8 @@
 			position: absolute;
 			left: 0;
 			right: 0;
-			top: 100%;
+			top: 0;
+			z-index: 1000;
 			max-width: @pageWidth;
 		}
 	}
@@ -47,10 +53,32 @@
 			align-self: center;
 		}
 	}
+
+	ul, li, button, span {
+		display: inline-block;
+		padding: 0;
+		margin: 0.2em 0.5em 0.4em;
+		border: none;
+		background: none;
+	}
+
+	a, button {
+		color: @frontColor1;
+		text-decoration: none;
+	}
+
+	.right {
+		text-align: right;
+	}
+
+	@media (max-width: (0.5 * @pageWidth)) {
+		text-align: center;
+	}
 }
 
 .logo {
-	height: @headerHeight - 1em;
+	height: 100%;
+	margin: 1em;
 	align-self: center;
 
 	> img {
@@ -64,12 +92,8 @@ body.ipHasAdminPanel > header {
 }
 
 .menu {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-
 	align-self: flex-end;
-
+	margin: 0;
 
 	li {
 		display: inline-block;
@@ -79,7 +103,6 @@ body.ipHasAdminPanel > header {
 	a {
 		display: inline-block;
 		padding: (@topNavHeight - 1em)/2;
-		margin: 0;
 		text-decoration: none;
 		color: @frontColor1;
 
@@ -130,31 +153,3 @@ body.ipHasAdminPanel > header {
 	}
 }
 
-header {
-	display: block;
-	background: @frontColor1;
-	position: relative;
-	box-shadow: @shadow;
-	text-align: right;
-
-	ul, li, button, span {
-		display: inline-block;
-		padding: 0;
-		margin: 0.2em 0.5em;
-		border: none;
-		background: none;
-	}
-
-	a, button {
-		color: white;
-		text-decoration: none;
-	}
-
-	span {
-		float: right;
-	}
-
-	@media (max-width: (0.5 * @pageWidth)) {
-		text-align: center;
-	}
-}
