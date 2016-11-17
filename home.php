@@ -4,11 +4,8 @@
 
 <main class="home">
 	<div class="home-splash" <?php echo ipSlot('bkgImage'); ?>>
-		<div>
-			<?php echo ipBlock('splash'); ?>
-		</div>
+		<?php echo ipBlock('banner'); ?>
 	</div>
-	<?php echo ipBlock('banner'); ?>
 	<?php echo ipBlock('main'); ?>
 </main>
 

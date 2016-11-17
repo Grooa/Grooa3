@@ -5,9 +5,12 @@
 
 .home-splash {
 	width: 100%;
-	min-height: 20em;
+	min-height: 80vh;
 	overflow: hidden;
 	background-attachment: fixed;
+	position: relative;
+	margin-bottom: 4em;
+	box-shadow: inset @shadow;
 
 	#ipBlock-splash {
 		margin: 8em auto 4em;
@@ -17,14 +20,6 @@
 		@media (max-width: (0.75 * @pageWidth)) {
 			margin: 0;
 		}
-	}
-
-	> div {
-		background: rgba(255, 255, 255, 0.3);
-		max-width: @pageWidth;
-		width: 100%;
-		overflow: hidden;
-		margin: 0 auto;
 	}
 
 	.ipWidget-Text {
@@ -42,14 +37,22 @@
 }
 
 #ipBlock-banner {
-	background: @frontColor1;
-	color: white;
-	overflow: hidden;
-	margin-bottom: 2em;
-	text-align: left;
+	background: white;
+	position: absolute;
+	max-width: @pageWidth;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	box-shadow: @shadow;
 
 	h1, h2, h3, h4, h5, h6, a {
-		color: white;
+		color: @frontColor3;
+		margin: 0.5em 0.5em 0;
+	}
+
+	.ipWidget {
+		margin: 0;
 	}
 
 	@media (min-width: @pageWidth) {
