@@ -73,6 +73,8 @@
 					</li>
 	<?php
 				}
+
+				if (count(ipContent()->getLanguages()) > 1) {
 	?>
 
 					<li data-component="dropdown">
@@ -88,6 +90,9 @@
 							'attributes' => array('class' => 'dropdown language-dropdown')
 						)); ?>
 					</li>
+	<?php
+				}
+	?>
 				</ul>
 
 				<nav>
