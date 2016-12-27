@@ -1,0 +1,31 @@
+.ipWidget-File {
+	ul {
+		list-style: none;
+	}
+
+	a::before {
+		color: white;
+		background: @frontColor1;
+		display: inline-block;
+		margin: 0 0.5em;
+		width: 2.5em;
+		vertical-align: middle;
+		text-align: center;
+		font-size: 0.7em;
+		content: '';
+	}
+
+	a[href$=".pdf"]::before {
+		content: 'PDF';
+	}
+
+	a[href$=".doc"]::before,
+	a[href$=".docx"]::before {
+		content: 'DOC';
+	}
+
+	a[href$=".ppt"]::before,
+	a[href$=".pptx"]::before {
+		content: 'DOC';
+	}
+}
