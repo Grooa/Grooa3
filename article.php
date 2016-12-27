@@ -7,6 +7,7 @@
 	<article>
 	<?php echo ipBlock('main'); ?>
 	</article>
+	<?php echo ipBlock('bottom')->asStatic(); ?>
 </main>
 
 <?php echo ipView('_footer.php')->render(); ?>
