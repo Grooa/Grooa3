@@ -11,6 +11,10 @@
 	position: relative;
 	margin-bottom: 4em;
 	box-shadow: inset @shadow;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: end;
 
 	#ipBlock-splash {
 		margin: 8em auto 4em;
@@ -38,13 +42,8 @@
 
 #ipBlock-banner {
 	background: white;
-	position: absolute;
 	max-width: @pageWidth;
 	width: 100%;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
 	box-shadow: @shadow;
 
 	h1, h2, h3, h4, h5, h6, a {
@@ -61,6 +60,15 @@
 			padding: 0 5rem;
 		}
 	}
+}
+
+
+#ipBlock-promotion {
+	background: white;
+	max-width: 0.75 * @pageWidth;
+	margin: 3em 0 2em;
+	font-size: 1.1em;
+	box-shadow: @shadow;
 }
 
 
