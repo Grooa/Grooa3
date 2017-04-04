@@ -1,3 +1,6 @@
-Plugin/
-*.swp
-assets/theme.css
+
+**/.DS_Store
+
+
+# Ignore swap files
+**/*.swp
