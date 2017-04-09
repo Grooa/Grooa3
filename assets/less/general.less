@@ -61,17 +61,22 @@ li {
 
 .button,
 button {
-
 	box-sizing: border-box;
 	background: white;
 	border: @lineWidth solid @frontColor1;
-	padding: 0.5em;
+
 	color: @frontColor1;
-	text-decoration: none;
+	cursor: pointer;
+
+	display: inline-block;
+
+	font-size: 0.9em;
+
 	line-height: 1;
 
-    cursor: pointer;
-    display: inline-block;
+	padding: 0.7em 1.5em;
+
+	text-decoration: none;
 
     &:hover {
 		background: @frontColor1;
@@ -91,7 +96,7 @@ button {
 	&[disabled], .disabled {
 		background: #ccc;
 		border-color: #ccc;
-		color: black;
+		color: @textColor;
 		cursor: default;
 	}
 
@@ -102,6 +107,8 @@ button {
 
 label {
 	margin-top: 1em;
+	font-size: 0.9em;
+	font-weight: 100;
 }
 
 input[type="text"],
@@ -118,6 +125,10 @@ textarea {
 	&:focus {
 		outline: none;
 		border-bottom-color: @frontColor1;
+	}
+
+	&.invalid {
+		border-bottom-color: @errorColor;
 	}
 }
 
