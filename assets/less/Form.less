@@ -1,26 +1,71 @@
+
 .ipWidget-Form {
+	display: flex;
+
 	text-align: left;
 
 	.ipwForm {
-		max-width: 20em;
+		box-sizing: border-box;
+
 		margin: 0 auto;
 	}
 
     .ipwThankYou { /* mimicking the same styles as for form to keep message 'inside' the box */
-        border: @lineWidth solid @frontColor2;
-        padding: 1em;
+        align-items: center;
+
+		border: @lineWidth solid @frontColor2;
+
+		display: flex;
+
+		padding: 1em;
     }
 
 	.footer {
-		position: relative;
-		z-index: 2000;
-		font-size: 0.8em;
-		margin: -2em 0 2em;
 		color: #666;
+
+		font-size: 0.8em;
+
+		position: relative;
+
+		z-index: 10;
 	}
 
-	fieldset {
-		border: none;
-	}
+}
 
+.form-section {
+	align-items: center;
+
+	border: none;
+
+	display: flex;
+
+	flex-wrap: wrap;
+
+	justify-content: center;
+}
+
+.form-group {
+	box-sizing: border-box;
+
+	flex-grow: 1;
+
+	margin: 0.5em;
+}
+
+.help-error {
+	color: @errorColor;
+}
+
+.type-textarea {
+	flex-basis: 100%;
+
+	textarea {
+		max-width: none;
+	}
+}
+
+@media (max-width: (0.5 * @pageWidth)) {
+	.form-group {
+		flex-basis: 20em;
+	}
 }
