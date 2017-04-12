@@ -3,8 +3,9 @@
 ?>
 <form <?php echo $form->getClassesStr(); ?> <?php echo $form->getAttributesStr(); ?>
     method="<?php echo $form->getMethod(); ?>" action="<?php echo $form->getAction(); ?>" enctype="multipart/form-data">
+
     <?php foreach ($form->getFieldsets() as $fieldsetKey => $fieldset) { ?>
-        <fieldset <?php echo $fieldset->getAttributesStr($this->getDoctype()) ?>>
+        <div class="form-section" <?php echo $fieldset->getAttributesStr($this->getDoctype()) ?>>
             <?php if ($fieldset->getLabel()) { ?>
                 <legend><?php echo esc($fieldset->getLabel()); ?></legend>
             <?php } ?>
@@ -22,7 +23,8 @@
                 }
                 ?>
             <?php } ?>
-        </fieldset>
+        </div>
     <?php } ?>
+
 	<?php echo ipSlot('text', array('id' => 'form-footer', 'class' => 'footer')); ?>
 </form>
