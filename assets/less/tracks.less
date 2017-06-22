@@ -1,0 +1,84 @@
+
+.tracks-cover {
+    background-color: #EFEFEF;
+
+    h1 {
+        margin: 0 0 .5em;
+        text-align: center;
+    }
+
+    .cover-image {
+        align-items: center;
+
+        background-position: center;
+
+        display: flex;
+
+        height: 25em;
+
+        justify-content: center;
+
+        position: relative;
+
+        width: 100%;
+
+        h1 {
+            margin: auto;
+            color: #FFF;
+            text-shadow: rgba(0,0,0,.2) 0.05em 0.05em 0.2em;
+        }
+
+        &.blurred {
+            filter: grayscale(0.3);
+        }
+    }
+
+    article {
+        box-sizing: border-box;
+        padding: 1em;
+        margin: auto;
+
+        max-width: @pageWidth;
+    }
+
+    .metadata {
+        align-items: center;
+
+        background-color: #FFF;
+        border-radius: 2px;
+
+        color: #212121;
+
+        display: flex;
+
+        flex-wrap: wrap;
+        flex: 5em;
+
+        justify-content: space-between;
+
+        overflow: hidden;
+
+        > * {
+            flex: 1;
+        }
+
+        .price {
+            //color: #698113;
+
+            font-size: 1.1em;
+            font-style: normal;
+            font-weight: 100;
+
+            padding-left: 1em;
+
+            text-align: center;
+        }
+
+        .continue {
+            background-color: #0a6aa1;
+            border: 0;
+
+            color: #FFF;
+        }
+    }
+}

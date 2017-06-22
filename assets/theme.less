@@ -1,8 +1,6 @@
 /**
  * Main less file. Mainly imports other bits and pieces.
  */
-
-
 // ImpressPages styling
 @import "less/minIpContent/global.less";
 @import "less/minIpContent/block.less";
@@ -11,19 +9,17 @@
 @import "less/minIpContent/forms.less";
 @import "less/ipContent/ipWidget/Text.less";
 @import "less/ipContent/ipWidget/Image.less";
-
-
 @import "less/Form.less";
 @import "less/File.less";
 
 .ipWidget-Text {
-	margin-bottom: 2em;
+    margin-bottom: 2em;
 }
 
 // Use inherited fonts for all elements
 button, input, select, textarea {
-	font-family : inherit;
-	font-size   : 100%;
+    font-family: inherit;
+    font-size: 100%;
 }
 
 /*
@@ -50,6 +46,7 @@ button, input, select, textarea {
 @import "less/article.less";
 @import "less/home.less";
 @import "less/main.less";
+@import "less/tracks.less";
 
 // Custom widgets
 @import "less/CoverImage.less";
@@ -67,12 +64,11 @@ button, input, select, textarea {
 #ipBlock-main > .ipWidget,
 main > .ipBlock > .ipWidget,
 main > .ipWidget {
-	max-width: @pageWidth - 2em;
-	margin-left: auto;
-	margin-right: auto;
-	box-sizing: border-box;
+    max-width: @pageWidth - 2em;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
-
 
 /*
 @import "less/header.less";
