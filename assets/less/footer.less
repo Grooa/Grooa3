@@ -1,42 +1,44 @@
 
 footer {
-	background: @frontColor1;
-	color: white;
-	padding: 1em;
-	text-align: center;
+    background: @frontColor1;
+    color: white;
+    padding: 1em;
+    text-align: center;
 
-	a {
-		color: inherit;
-	}
+    a {
+        color: inherit;
+    }
 
-	.ipWidget-Text {
-		margin: 0;
-	}
+    .ipWidget-Text {
+        margin: 0;
+    }
 
-	> div {
-		display: flex;
-		align-items: center;
+    > div {
+        display: flex;
+        align-items: center;
 
-		> * {
-			flex: 1 1;
-			margin: 1em;
-		}
+        flex-wrap: wrap;
 
-		> .logo {
-			order: -1;
-		}
+        > * {
+            flex: 1 1;
+            margin: 1em;
+        }
 
-		> .social {
-			order: 1;
-		}
+        > .logo {
+            order: -1;
+        }
 
-		min-height: 3em;
-		max-width: @pageWidth;
-		width: 100%;
-		margin: 0 auto;
+        > .social {
+            order: 1;
+        }
 
-		@media (max-width: (0.5 * @pageWidth)) {
-			display: block;
-		}
-	}
+        min-height: 3em;
+        max-width: @pageWidth;
+        width: 100%;
+        margin: 0 auto;
+
+        @media (max-width: (0.5 * @pageWidth)) {
+            display: block;
+        }
+    }
 }

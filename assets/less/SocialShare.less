@@ -1,11 +1,70 @@
 .ipWidget-ShareButtons {
-	text-align: center;
+    text-align: center;
 
-	a {
-		text-decoration: none;
-	}
-
-	path {
-		fill: @frontColor1;
-	}
+    a {
+        text-decoration: none;
+    }
 }
+
+.socialshare {
+    box-sizing: border-box;
+
+    display: flex;
+
+    justify-content: center;
+
+    list-style-type: none;
+
+    margin: auto auto;
+    max-width: 40em;
+
+    padding: 0 1em .5em;
+
+    width: 100%;
+
+    li {
+        margin: 0;
+    }
+
+    > li~li { /* Ensure spacing between elements */
+        margin-left: .5em;
+    }
+
+    a, a > svg {
+        height: 30px;
+    }
+
+    a {
+        background-color: #AAA;
+
+        display: block;
+
+        height: 30px;
+
+        padding: .5em 5em .5em .5em;
+
+        transition: all .2s ease;
+    }
+
+    svg path {
+        fill: @iconColor;
+    }
+}
+
+
+a.share-facebook {
+    background-color: #3b5998;
+}
+
+a.share-facebook:hover {
+    background-color: #314A7E;
+}
+
+a.share-linkedin {
+    background-color: #3A96C2;
+}
+
+a.share-linkedin:hover {
+    background-color: #007BB6;
+}
+

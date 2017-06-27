@@ -6,16 +6,25 @@
 						alt="Grooa">
 				</div>
 				<div class="social">
-					Follow us on<br>
-					<a href="<?php echo ipGetThemeOption('facebookUrl'); ?>"><img
-						src="<?php echo ipThemeUrl('assets/img/facebook.svg'); ?>"
-						alt="Facebook"></a>
-					<a href="<?php echo ipGetThemeOption('linkedinUrl'); ?>"><img
-						src="<?php echo ipThemeUrl('assets/img/linkedin.svg'); ?>"
-						alt="LinkedIn"></a>
-					<a href="<?php echo ipGetThemeOption('rssUrl'); ?>"><img 
+					<p class="centered">Follow us on</p>
+                    <ul class="socialshare">
+                        <li>
+                            <a href="<?php echo ipGetThemeOption('facebookUrl'); ?>"
+                               class="share-facebook">
+                                <?php include('assets/img/facebook.svg') ?>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo ipGetThemeOption('linkedinUrl'); ?>"
+                               class="share-linkedin">
+                                <?php include('assets/img/linkedin.svg') ?>
+                            </a>
+                        </li>
+                    </ul>
+
+				<?php	/* <a href="<?php echo ipGetThemeOption('rssUrl'); ?>"><img
 						src="<?php echo ipThemeUrl('assets/img/rss.svg'); ?>"
-						alt="RSS"></a>
+						alt="RSS"></a> */ ?>
 				</div>
 				<?php echo ipBlock('footer')->asStatic(); ?>
 			</div>
