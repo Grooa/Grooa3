@@ -1,0 +1,146 @@
+
+em.price-tiled,
+strong.price-tiled {
+    width: 100%;
+    text-align: center;
+
+}
+
+ul.tiled {
+    display: -ms-grid;
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    grid-auto-flow: row dense;
+    //grid-auto-rows: minmax(auto, auto);
+
+    // TODO:ffl - adapt for ms
+
+    margin: 0;
+
+    padding: 0;
+    position: relative;
+
+    @media screen and (max-width: 35em) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    list-style-type: none;
+
+    > li {
+        background-color: #FFF;
+        height: 22em;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 0;
+    }
+
+    .thumbnail {
+        position: relative;
+        overflow: hidden;
+
+        flex: 0 0 11em;
+
+        > img {
+            width: 100%;
+        }
+
+        &.blurred > img {
+            filter: blur(2px) brightness(90%);
+        }
+    }
+
+    h3 {
+        padding-top: .4em;
+        text-align: center;
+    }
+
+    .description {
+        box-sizing: border-box;
+        max-height: 20%;
+
+        padding: 0 .5em;
+    }
+
+    a {
+        background-color: #4527A0;
+        border: 0;
+
+        box-sizing: border-box;
+
+        color: #FFF;
+
+        display: block;
+
+        margin-top: auto;
+
+        padding: 1em;
+
+        text-align: center;
+
+        &:hover {
+            background-color: #512DA8;
+        }
+    }
+}
+
+ul.shadowed > li {
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, .1) 0.05em 0.05em 0.2em;
+
+    overflow: hidden;
+
+    transition: all .2s ease;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, .2) 0.05em 0.05em 0.2em;
+    }
+}
+
+ul.x-breadcrumbs {
+    //background-color: #FFF;
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-wrap: wrap;
+    font-size: 1.1em;
+
+    list-style-type: none;
+
+    padding: .5em;
+
+    > li ~ li:before {
+        content: "/";
+        font-weight: 400;
+        padding: 0 0.3em;
+    }
+
+    > li.currentPage {
+        > a {
+            font-weight: 100;
+        }
+
+        &:hover {
+            text-decoration: none;
+            cursor: default;
+        }
+    }
+
+    > li:last-child:after {
+        content: "/";
+    }
+
+    a {
+        padding: 0;
+
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
