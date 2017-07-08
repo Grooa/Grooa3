@@ -1,9 +1,8 @@
-
 .tracks-cover {
     background-color: #EFEFEF;
 
     h1 {
-        margin: 0 0 .5em;
+        margin: .5em 0 .5em;
         text-align: center;
     }
 
@@ -31,11 +30,15 @@
         &.blurred {
             filter: grayscale(0.3);
         }
+
+        @media screen and (max-width: 30rem) {
+            height: 10em;
+        }
     }
 
     article {
         box-sizing: border-box;
-        padding: 1em;
+        padding: 0 1em;
         margin: auto;
 
         max-width: @pageWidth;
@@ -44,7 +47,7 @@
     .metadata {
         align-items: center;
 
-        background-color: #FFF;
+        //background-color: #FFF;
         border-radius: 2px;
 
         color: #212121;
@@ -56,29 +59,46 @@
 
         justify-content: space-between;
 
+        min-height: 1em;
+
         overflow: hidden;
 
         > * {
+            box-sizing: border-box;
+
             flex: 1;
+            font-size: 1.1em;
+
+            padding: .5em;
+
+            text-align: center;
+        }
+
+        .price,
+        .continue {
+            font-style: normal;
+            font-weight: 100;
         }
 
         .price {
+            background-color: #FFF;
             //color: #698113;
-
-            font-size: 1.1em;
             font-style: normal;
             font-weight: 100;
 
-            padding-left: 1em;
+            padding: .5em;
 
             text-align: center;
         }
 
         .continue {
-            background-color: #0a6aa1;
+            background-color: #C5E1A5; // TODO - Lighter green
             border: 0;
 
-            color: #FFF;
+            //color: #FFF;
+
+            font-weight: 800;
         }
     }
 }
+

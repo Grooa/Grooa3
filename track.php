@@ -1,17 +1,20 @@
 <?php // @Layout name: Track ?>
 
-<?php echo ipView('_header.php', array('headerClass' => 'above'))->render(); ?>
+<?php echo ipView('_header.php', array('headerClass' => ''))->render(); ?>
 
 <main class="tracks-cover">
-    <div class="cover-image <?= isset($coverTitle) ? 'blurred' : ''?>"
-        <?= isset($coverImage) ?
-            "style=\"background-image: url(" . ipFileUrl('file/repository/' . $coverImage) .");\"" :
-            ''?>>
 
-        <?php if(isset($coverTitle)): ?>
-            <h1><?=$coverTitle?></h1>
-        <?php endif; ?>
-    </div>
+    <?php if (!empty($coverImage)): ?>
+        <div class="cover-image <?= empty($coverTitle) ? 'blurred' : '' ?>"
+            <?= isset($coverImage) ?
+                "style=\"background-image: url(" . $coverImage . ");\"" :
+                '' ?>>
+
+            <?php if (isset($coverTitle)): ?>
+                <h1><?= $coverTitle ?></h1>
+            <?php endif; ?>
+        </div>
+    <? endif; ?>
 
     <article>
         <?php echo ipBlock('main'); ?>
