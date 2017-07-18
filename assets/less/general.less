@@ -142,9 +142,14 @@ textarea {
         border-bottom-color: @frontColor1;
     }
 
-    &.invalid {
+    &:invalid { // Native css is better than previous static css `.invalid`
         border-bottom-color: @errorColor;
     }
+
+    &:valid {
+        border-bottom-color: @successColor;
+    }
+
 }
 
 .big {

@@ -1,71 +1,109 @@
 
 .ipWidget-Form {
-	display: flex;
+    display: flex;
 
-	text-align: left;
+    text-align: left;
 
-	.ipwForm {
-		box-sizing: border-box;
+    .ipwForm {
+        box-sizing: border-box;
 
-		margin: 0 auto;
-	}
+        margin: 0 auto;
+    }
 
     .ipwThankYou { /* mimicking the same styles as for form to keep message 'inside' the box */
         align-items: center;
 
-		border: @lineWidth solid @frontColor2;
+        border: @lineWidth solid @frontColor2;
 
-		display: flex;
+        display: flex;
 
-		padding: 1em;
+        padding: 1em;
     }
 
-	.footer {
-		color: #666;
+    .footer {
+        color: #666;
 
-		font-size: 0.8em;
+        font-size: 0.8em;
 
-		position: relative;
+        position: relative;
 
-		z-index: 10;
-	}
+        z-index: 10;
+    }
 
 }
 
 .form-section {
-	align-items: center;
+    align-items: center;
 
-	border: none;
+    border: none;
 
-	display: flex;
+    display: flex;
 
-	flex-wrap: wrap;
+    flex-wrap: wrap;
 
-	justify-content: center;
+    justify-content: center;
 }
 
 .form-group {
-	box-sizing: border-box;
+    box-sizing: border-box;
 
-	flex-grow: 1;
+    flex-grow: 1;
 
-	margin: 0.5em;
+    margin: 0.5em;
 }
 
 .help-error {
-	color: @errorColor;
+    color: @errorColor;
 }
 
 .type-textarea {
-	flex-basis: 100%;
+    flex-basis: 100%;
 
-	textarea {
-		max-width: none;
-	}
+    textarea {
+        max-width: none;
+    }
 }
 
 @media (max-width: (0.5 * @pageWidth)) {
-	.form-group {
-		flex-basis: 20em;
-	}
+    .form-group {
+        flex-basis: 20em;
+    }
+}
+
+form {
+
+    .form-group.type-info {
+        box-sizing: border-box;
+        font-size: 0.9em;
+
+        padding: 0 0 .5em;
+    }
+}
+
+form.vertical {
+	display: block;
+
+    margin: auto;
+    max-width: 30em;
+
+    .form-section {
+        display: block;
+
+        > legend {
+            box-sizing: border-box;
+            font-weight: 800;
+
+            text-align: center;
+
+            width: 100%;
+        }
+    }
+
+    .form-group.type-checkbox {
+        display: flex;
+
+        input {
+            margin-left: 1em;
+        }
+    }
 }

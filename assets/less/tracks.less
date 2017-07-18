@@ -38,7 +38,7 @@
 
     article {
         box-sizing: border-box;
-        padding: 0 1em;
+        padding: 1em;
         margin: auto;
 
         max-width: @pageWidth;
@@ -64,12 +64,14 @@
         overflow: hidden;
 
         > * {
+            border: 0;
             box-sizing: border-box;
 
-            flex: 1;
+            flex: 1 0 10em;
             font-size: 1.1em;
 
             padding: .5em;
+            margin: .5em;
 
             text-align: center;
         }
@@ -81,7 +83,8 @@
         }
 
         .price {
-            background-color: #FFF;
+            align-self: baseline;
+            background-color: #FFF; //#388E3C
             //color: #698113;
             font-style: normal;
             font-weight: 100;
@@ -91,23 +94,17 @@
             text-align: center;
         }
 
+        .button.login {
+            align-self: baseline;
+            border: 0.2rem solid #090575;
+        }
+
         .continue {
+
             background-color: #C5E1A5; // TODO - Lighter green
             border: 0;
 
-            //color: #FFF;
-
             font-weight: 800;
-        }
-
-        a.login {
-            background-color: @frontColor1;
-            border: 0;
-            color: #FFF;
-
-            &:hover {
-                background-color: lighten(@frontColor1, 5%);
-            }
         }
     }
 }

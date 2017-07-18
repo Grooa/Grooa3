@@ -3,7 +3,6 @@ em.price-tiled,
 strong.price-tiled {
     width: 100%;
     text-align: center;
-
 }
 
 ul.tiled {
@@ -30,7 +29,7 @@ ul.tiled {
 
     > li {
         background-color: #FFF;
-        height: 22em;
+        height: 25em;
 
         display: flex;
         flex-direction: column;
@@ -89,19 +88,20 @@ ul.tiled {
 
 ul.shadowed > li {
     border-radius: 2px;
-    box-shadow: rgba(0, 0, 0, .1) 0.05em 0.05em 0.2em;
+    box-shadow: @boxShadow;
 
     overflow: hidden;
 
-    transition: all .2s ease;
+    transition: @transition;
 
     &:hover {
-        box-shadow: rgba(0, 0, 0, .2) 0.05em 0.05em 0.2em;
+        box-shadow: @boxShadowHover;
     }
 }
 
 ul.x-breadcrumbs {
-    //background-color: #FFF;
+    background-color: #FFF;
+    border-radius: 2px;
     box-sizing: border-box;
 
     display: flex;
@@ -111,7 +111,9 @@ ul.x-breadcrumbs {
 
     list-style-type: none;
 
-    padding: .5em;
+    margin: 0;
+
+    padding: .2em .5em;
 
     > li ~ li:before {
         content: "/";

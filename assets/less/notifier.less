@@ -1,0 +1,41 @@
+
+.notifier {
+    align-items: center;
+
+    background-color: #CCC;
+    box-shadow: @boxShadow;
+    box-sizing: border-box;
+
+    color: #FFF;
+
+    display: none;
+
+    height: 3em;
+
+    justify-content: center;
+
+    left: 0;
+
+    padding: .5em;
+    position: fixed;
+
+    text-align: center;
+    top: 0;
+
+    width: 100%;
+
+    transition: all .5s ease;
+
+    z-index: 1000;
+
+
+    &.success {
+        background-color: #388E3C;
+        display: flex;
+    }
+
+    &.error {
+        background-color: @errorColor;
+        display: flex;
+    }
+}
