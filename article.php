@@ -1,6 +1,6 @@
 <?php // @Layout name: Article ?>
 
-<?php echo ipView('_header.php', array('headerClass' => 'above'))->render(); ?>
+<?php echo ipView('_header.php', array('headerClass' => ''))->render(); ?>
 
 <main class="article">
 	<div class="article-image" <?php echo ipSlot('bkgImage'); ?>></div>

@@ -1,81 +1,82 @@
-.home-banner {
-	height: 50vh;
-	width: 100%;
+.home-banner  {
+    height: 50vh;
+    width: 100%;
 }
 
 .home-splash {
-	width: 100%;
-	min-height: 80vh;
-	overflow: hidden;
-	background-attachment: fixed;
-	position: relative;
-	margin-bottom: 4em;
-	box-shadow: inset @shadow;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-end;
+    width: 100%;
+    min-height: 50vh;
+    overflow: hidden;
+    background-attachment: fixed;
+    position: relative;
+    margin-bottom: 4em;
+    box-shadow: inset @shadow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 
-	#ipBlock-splash {
-		margin: 8em auto 4em;
-		max-width: 0.75 * @pageWidth;
-		background: white;
+    #ipBlock-splash {
+        margin: 8em auto 4em;
+        max-width: 0.75 * @pageWidth;
+        background: white;
 
-		@media (max-width: (0.75 * @pageWidth)) {
-			margin: 0;
-		}
-	}
+        @media (max-width: (0.75 * @pageWidth)) {
+            margin: 0;
+        }
+    }
 
-	.ipWidget-Text {
-		@media (min-width: (0.75 * @pageWidth)) {
-			margin: 2em 0;
-			font-size: 1.1em;
-		}
-	}
+    .ipWidget-Text {
+        @media (min-width: (0.75 * @pageWidth)) {
+            margin: 2em 0;
+            font-size: 1.1em;
+        }
+    }
 
-	.ipWidget-Image {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-	}
+    .ipWidget-Image {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
 }
 
 #ipBlock-banner {
-	background: white;
-	max-width: @pageWidth;
-	width: 100%;
-	box-shadow: @shadow;
+    background: white;
+    max-width: @pageWidth;
+    width: 100%;
+    box-shadow: @boxShadow;
 
-	h1, h2, h3, h4, h5, h6, a {
-		color: @frontColor3;
-		margin: 0.5em 0.5em 0;
-	}
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
 
-	.ipWidget {
-		margin: 0;
-	}
+    h1, h2, h3, h4, h5, h6, a {
+        color: @frontColor3;
+        margin: 0.5em 0.5em 0;
+    }
 
-	@media (min-width: @pageWidth) {
-		> .ipWidget {
-			padding: 0 5rem;
-		}
-	}
+    .ipWidget {
+        margin: 0;
+    }
+
+    @media (min-width: @pageWidth) {
+        > .ipWidget {
+            padding: 0 5rem;
+        }
+    }
 }
-
 
 #ipBlock-promotion {
-	background: white;
-	max-width: 0.75 * @pageWidth;
-	margin: 3em 0 2em;
-	font-size: 1.1em;
-	box-shadow: @shadow;
+    background: white;
+    max-width: 0.75 * @pageWidth;
+    margin: 3em 0 2em;
+    font-size: 1.1em;
+    box-shadow: @shadow;
 }
 
-
 main.home {
-	text-align: center;
+    text-align: center;
 }
 
 .ipWidget-Image img {
-	margin: 0 auto;
+    margin: 0 auto;
 }

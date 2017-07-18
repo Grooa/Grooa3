@@ -6,52 +6,51 @@
 	background: white;
 
 	&:hover {
-		background: #ccc;
+		background: @lightBackground;
+        border-bottom: #CCC solid 2px;
 	}
 }
 
 header {
-	border-bottom: @headerBorderHeight solid @frontColor1;
-	width: 100%;
+	//border-bottom: @headerBorderHeight solid @frontColor1;
+    align-items: stretch;
+
+    background: white;
+    box-shadow: @boxShadow;
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: row;
+    font-size: 0.8em;
+
+    justify-content: space-between;
+
 	margin: 0 auto;
-	padding: 0 0.5em;
-	background: white;
-	box-sizing: border-box;
-	box-shadow: @shadow;
+
+    padding: 0 0.5em;
+
 	text-align: center;
 
-	font-size: 0.8em;
+    width: 100%;
 
 	nav {
 		font-size: 1rem;
 	}
 
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: flex-end;
-
 	&.above {
 		@media (min-width: @pageWidth) {
-			position: absolute;
-			left: 0;
+            left: 0;
+
+            max-width: @pageWidth;
+
+            position: absolute;
+
 			right: 0;
-			top: 0;
-			z-index: 1000;
-			max-width: @pageWidth;
-		}
-	}
 
-	@media (max-width: (0.5 * @pageWidth)) {
-		flex-direction: column;
-		padding: 0;
+            top: 0;
 
-		.logo {
-			margin: 0.5em;
-		}
-
-		nav {
-			align-self: center;
+            z-index: 1000;
 		}
 	}
 
@@ -69,14 +68,33 @@ header {
 	}
 
 	.right {
-		text-align: right;
+        align-items: flex-end; // Align to right side
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center; // Center vertically
+
 	}
 
 	@media (max-width: (0.5 * @pageWidth)) {
-		text-align: center;
 		align-items: center;
-		.right {
-			text-align: center;
+
+        flex-direction: column;
+
+        padding: 0;
+
+        .logo {
+            margin: 0.2em;
+        }
+
+        nav {
+            align-self: center;
+        }
+
+        .right {
+            align-items: center;
 		}
 	}
 }
@@ -96,7 +114,13 @@ body.ipHasAdminPanel > header {
 		position: static;
 }
 
-.menu {
+ul.topmenu {
+    .active > a {
+        font-weight: 800;
+    }
+}
+
+ul.menu {
 	align-self: flex-end;
 	margin: 0;
 
@@ -106,17 +130,22 @@ body.ipHasAdminPanel > header {
 	}
 
 	a {
-		display: inline-block;
-		padding: (@topNavHeight - 1em)/2;
-		text-decoration: none;
-		color: @frontColor1;
+        .hoverable();
 
-		.hoverable();
+        background: transparent;
+
+        color: @frontColor1;
+
+        display: inline-block;
+
+        padding: (@topNavHeight - 1em)/3 .5em;
+
+        text-decoration: none;
 	}
 
 	.active > a {
-		background: @frontColor1;
-		color: white;
+		border-bottom: @frontColor1 solid 2px;
+		font-weight: 800;
 	}
 }
 

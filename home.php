@@ -1,6 +1,6 @@
 <?php // @Layout name: Home ?>
 
-<?php echo ipView('_header.php', array('headerClass' => 'above'))->render(); ?>
+<?php echo ipView('_header.php', array('headerClass' => ''))->render(); ?>
 
 <main class="home">
 	<div class="home-splash" <?php echo ipSlot('bkgImage'); ?>>
