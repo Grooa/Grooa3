@@ -4,22 +4,31 @@
 }
 
 .home-splash {
-    width: 100%;
-    min-height: 50vh;
-    overflow: hidden;
-    background-attachment: fixed;
-    position: relative;
-    margin-bottom: 4em;
-    box-shadow: inset @shadow;
-    display: flex;
-    flex-direction: column;
     align-items: center;
+
+    background-attachment: fixed;
+    box-shadow: inset @shadow;
+
+    display: flex;
+
+    flex-direction: column;
+
     justify-content: flex-end;
 
+    margin-bottom: 4em;
+    min-height: 50vh;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+
     #ipBlock-splash {
+        background: white;
+
         margin: 8em auto 4em;
         max-width: 0.75 * @pageWidth;
-        background: white;
 
         @media (max-width: (0.75 * @pageWidth)) {
             margin: 0;
@@ -28,29 +37,34 @@
 
     .ipWidget-Text {
         @media (min-width: (0.75 * @pageWidth)) {
-            margin: 2em 0;
             font-size: 1.1em;
+
+            margin: 2em 0;
         }
     }
 
     .ipWidget-Image {
         display: flex;
+
         flex-direction: column;
+
         justify-content: flex-end;
     }
 }
 
 #ipBlock-banner {
     background: white;
-    max-width: @pageWidth;
-    width: 100%;
-    box-shadow: @boxShadow;
-
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
+    box-shadow: @boxShadow;
+
+    max-width: @pageWidth;
+
+    width: 100%;
 
     h1, h2, h3, h4, h5, h6, a {
         color: @frontColor3;
+
         margin: 0.5em 0.5em 0;
     }
 
@@ -67,10 +81,12 @@
 
 #ipBlock-promotion {
     background: white;
-    max-width: 0.75 * @pageWidth;
-    margin: 3em 0 2em;
-    font-size: 1.1em;
     box-shadow: @shadow;
+
+    font-size: 1.1em;
+
+    margin: 3em 0 2em;
+    max-width: 0.75 * @pageWidth;
 }
 
 main.home {
