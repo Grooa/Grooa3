@@ -14,6 +14,7 @@
 		<?php } ?>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src	'self' 'unsafe-inline' *; img-src 'self' data: *">
 
 		<?php foreach (array(16, 32, 192) as $size) { ?>
 		<link
