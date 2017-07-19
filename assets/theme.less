@@ -13,7 +13,7 @@
 @import "less/File.less";
 
 .ipWidget-Text {
-    margin-bottom: 2em;
+    //margin-bottom: 2em;
 }
 
 // Use inherited fonts for all elements
@@ -104,21 +104,33 @@ main > .ipWidget {
 @ipFormButtonBackground: @ipButtonBgColor;
 
 */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,700');
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 @lineWidth: 0.2rem;
-@frontColor1: #090575; // #4527A0 // indigo: #3F51B5
+@frontColor1: #3F51B5; // #4527A0 // indigo: #3F51B5
 @frontColor2: #009627;
-@frontColor3: #c81800;
+@frontColor3: #D32F2F;
+
 @lightBackground: #EFEFEF;
-@pageWidth: 60rem;
+@primaryBackground: #FFF;
+@secondaryBackground: rgb(245, 245, 245);
+
+@pageWidth: 70rem;
+@moduleWidth: 40rem; // Used by forms, and specific paragraphs
+
+@primaryFont: "Roboto", Helvetica, sans-serif;
+@secondaryFont: "Open Sans", Arial, sans-serif;
 
 @textColor: #212121;
 @iconColor: #FFF;
 
+@buttonColor: @frontColor1;
+@buttonColorHover: lighten(@frontColor1, 20%);
+
 @inputBorderSize: 0.1rem;
 
-@errorColor: #FF6666;
-@successColor: #388E3C;
+@errorColor: #E57373;
+@successColor: #66BB6A;
 @messageColor: #CCC;
 
 @boxShadow: rgba(0, 0, 0, .1) 0.05em 0.05em 0.2em;

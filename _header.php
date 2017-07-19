@@ -34,7 +34,6 @@
             )
         </script>
     <?php } ?>
-
 </head>
 
 <body>

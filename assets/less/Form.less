@@ -71,6 +71,12 @@
 }
 
 form {
+    display: block;
+
+    margin: auto;
+    max-width: @moduleWidth;
+
+    width: 100%;
 
     .form-group.type-info {
         box-sizing: border-box;
@@ -78,13 +84,16 @@ form {
 
         padding: 0 0 .5em;
     }
+
+    .live-helper {
+        display: none;
+    }
 }
 
 form.vertical {
 	display: block;
 
     margin: auto;
-    max-width: 30em;
 
     .form-section {
         display: block;
@@ -106,4 +115,8 @@ form.vertical {
             margin-left: 1em;
         }
     }
+}
+
+form.horizontal {
+
 }
