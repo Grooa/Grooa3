@@ -21,7 +21,7 @@ h2 {
 h1, h2, h3, h4, h5, h6 {
     color: @frontColor1;
     font-weight: lighter;
-    margin: 0 0.5em 0.5em;
+    margin: 0 0 0;
     padding: 0;
 
     > a {
@@ -31,8 +31,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
+    font-family: @secondaryFont;
     margin: 0;
-    padding: 0.5em 1em;
+    padding: 0.5em 0;
 }
 
 p.centered {
@@ -74,53 +75,6 @@ small.description {
     //TODO:
 }
 
-.button,
-button {
-    background: white;
-    border: @lineWidth solid @frontColor1;
-    box-sizing: border-box;
-
-    color: @frontColor1;
-    cursor: pointer;
-
-    display: inline-block;
-
-    font-size: 0.9em;
-
-    line-height: 1;
-
-    padding: 0.7em 1.5em;
-
-    text-decoration: none;
-
-    &:hover {
-        background: @frontColor1;
-        color: white;
-    }
-
-    a {
-        color: inherit;
-        text-decoration: inherit;
-    }
-
-    &::-moz-focus-inner {
-        padding: 0 !important;
-        border: none !important;
-    }
-
-    &[disabled], .disabled {
-        background: #ccc;
-        border-color: #ccc;
-        color: @textColor;
-        cursor: default;
-    }
-
-    &[type="submit"] {
-        padding-left: 2em;
-        padding-right: 2em;
-        width: 100%;
-    }
-}
 
 label {
     font-size: 0.9em;

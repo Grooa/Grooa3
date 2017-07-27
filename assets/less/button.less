@@ -1,25 +1,68 @@
-.button {
-    //border-radius: 0;
-    //border: none;
+.button,
+button {
+    background: @primaryColor;
+    border: 0;
+    box-sizing: border-box;
 
-    transition: all .2s ease;
+    color: @iconColor;
+    cursor: pointer;
+
+    display: inline-block;
+
+    font-size: 0.9em;
+
+    line-height: 1;
+
+    padding: 0.7em 1.5em;
+
+    text-decoration: none;
+    transition: @transition;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background: @primaryLighten;
+        color: white;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    &::-moz-focus-inner {
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    &[disabled], .disabled {
+        background: #ccc;
+        border-color: #ccc;
+        color: @textColor;
+        cursor: default;
+    }
+
+    &[type="submit"] {
+        padding-left: 2em;
+        padding-right: 2em;
+        width: 100%;
+    }
+
+    &[name='delete'],
+    &.dangerous {
+        background-color: @accentColor;
+
+        &:hover {
+            background-color: lighten(@accentColor, 10%);
+        }
+    }
+
+    &.delete-user {
+        width: 100%;
+    }
 }
-
-//.button[disabled] {
-//    background: #eee;
-//    color: #aaa;
-//    cursor: inherit;
-//
-//    &:hover {
-//        background: #eee;
-//    }
-//}
-//
-//.ipSkin-alternative {
-//    .button {
-//        background: @frontColor2;
-//    }
-//}
 
 .button.colored {
     //background-color: #0a6aa1;

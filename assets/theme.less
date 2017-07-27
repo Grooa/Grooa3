@@ -105,11 +105,22 @@ main > .ipWidget {
 
 */
 //@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,700');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto');
+
 @lineWidth: 0.2rem;
 @frontColor1: #3F51B5; // #4527A0 // indigo: #3F51B5
 @frontColor2: #009627;
 @frontColor3: #D32F2F;
+
+@primaryColor: #3F51B5;
+@accentColor: #D32F2F;
+
+@primaryLighten: lighten(@primaryColor, 5%);
+@primaryDarken: darken(@primaryColor, 5%);
+
+@accentLighten: lighten(@accentColor, 5%);
+@accentDarken: darken(@accentColor, 5%);
 
 @lightBackground: #EFEFEF;
 @primaryBackground: #FFF;
@@ -119,7 +130,7 @@ main > .ipWidget {
 @moduleWidth: 40rem; // Used by forms, and specific paragraphs
 
 @primaryFont: "Roboto", Helvetica, sans-serif;
-@secondaryFont: "Open Sans", Arial, sans-serif;
+@secondaryFont: "Lato", Arial, sans-serif;
 
 @textColor: #212121;
 @iconColor: #FFF;

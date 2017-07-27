@@ -2,7 +2,9 @@
 
 <?php echo ipView('_header.php', array('headerClass' => ''))->render(); ?>
 
-<div class="main-image" <?php echo ipSlot('bkgImage'); ?>></div>
+<div class="cover-image <?=!empty($useBlur) ? 'blurred' : ''?>">
+    <div class="main-image" <?php echo ipSlot('bkgImage'); ?>></div>
+</div>
 <main>
 	<?php echo ipBlock('main'); ?>
 </main>

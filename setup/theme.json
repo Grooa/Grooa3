@@ -40,7 +40,28 @@
 					"type": "Url"
 				}
 			]
-		}
+		},
+      {
+        "label": "Favicon",
+        "type": "group",
+        "options": [
+          {
+            "label": "Favicon 16px",
+            "name": "fav16",
+            "type": "RepositoryFile"
+          },
+          {
+            "label": "Favicon 32px",
+            "name": "fav32",
+            "type": "RepositoryFile"
+          },
+          {
+            "label": "Favicon 192px",
+            "name": "fav192",
+            "type": "RepositoryFile"
+          }
+        ]
+      }
     ]
 
 }

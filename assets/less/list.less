@@ -32,24 +32,58 @@ ul.tiled {
         height: 25em;
 
         display: flex;
+
         flex-direction: column;
 
         padding: 0;
+        position: relative;
+    }
+
+    .metadata {
+        display: block;
+
+        flex: 0 0 11em;
+
+        height: 10em;
+
+        position: relative;
     }
 
     .thumbnail {
-        position: relative;
+        filter: brightness(75%);
+
+        height: 100%;
+
         overflow: hidden;
 
-        flex: 0 0 11em;
+        position: relative;
+
+        width: 100%;
 
         > img {
             width: 100%;
         }
 
         &.blurred > img {
-            filter: blur(2px) brightness(90%);
+            filter: blur(2px) brightness(75%);
         }
+    }
+
+    .price-tiled {
+        color: #FFF;
+
+        font-size: 2.2em;
+
+        left: 0;
+
+        position: absolute;
+
+        text-align: center;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        width: 100%;
+
     }
 
     h3 {
@@ -84,6 +118,7 @@ ul.tiled {
             background-color: lighten(@frontColor1, 5%);
         }
     }
+
 }
 
 ul.shadowed > li {

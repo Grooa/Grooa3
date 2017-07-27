@@ -55,19 +55,26 @@
         $modules = \Ip\Internal\Plugins\Service::getActivePluginNames();
         if (in_array('User', $modules)) {
             $userMenu = new \Ip\Menu\Item();
+            $loggedIn = ipUser()->isLoggedIn();
+            $path = ipRequest()->getRelativePath();
 
-            $userMenu->setPageTitle(ipUser()->loggedIn() ? 'My Profile' : 'Login');
-            $userMenu->setTitle(ipUser()->loggedIn() ? 'My Profile' : 'Login');
-            $userMenu->setUrl(ipUser()->isLoggedIn() ?
+            $userMenu->setPageTitle($loggedIn ? 'My Profile' : 'Login');
+            $userMenu->setTitle($loggedIn ? 'My Profile' : 'Login');
+            $userMenu->setUrl($loggedIn ?
                 ipConfig()->baseUrl() . ipGetOption('User.urlAfterRegistration', 'profile') :
                 ipRouteUrl('User_login'));
+
+            if (($loggedIn && $path == 'profile') ||
+                (!$loggedIn && $path == 'login')) {
+                $userMenu->markAsCurrent(true);
+            }
 
             $result[] = $userMenu;
         }
 
         echo ipSlot('menu', array(
             'items' => $result,
-            'attributes' => array('class' => 'topmenu')
+            'attributes' => array('class' => 'menu secondary')
         ));
         ?>
 
@@ -96,7 +103,7 @@
 
             echo ipSlot('menu', array(
                 'items' => $result,
-                'attributes' => array('class' => 'menu')
+                'attributes' => array('class' => 'menu primary')
             ));
             ?>
         </nav>
