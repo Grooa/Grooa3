@@ -106,7 +106,7 @@ main > .ipWidget {
 */
 //@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,700');
 //@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
-@import url('https://fonts.googleapis.com/css?family=Lato|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Roboto:300,400,700');
 
 @lineWidth: 0.2rem;
 @frontColor1: #3F51B5; // #4527A0 // indigo: #3F51B5
@@ -119,21 +119,27 @@ main > .ipWidget {
 @primaryLighten: lighten(@primaryColor, 5%);
 @primaryDarken: darken(@primaryColor, 5%);
 
-@accentLighten: lighten(@accentColor, 5%);
-@accentDarken: darken(@accentColor, 5%);
+@accentLighten: lighten(@accentColor, 10%);
+@accentDarken: darken(@accentColor, 10%);
 
 @lightBackground: #EFEFEF;
 @primaryBackground: #FFF;
 @secondaryBackground: rgb(245, 245, 245);
 
+@headerColor: #1f1f1f;
+@footerColor: @headerColor;
+
 @pageWidth: 70rem;
+@mobileWidth: 35rem;
 @moduleWidth: 40rem; // Used by forms, and specific paragraphs
 
 @primaryFont: "Roboto", Helvetica, sans-serif;
 @secondaryFont: "Lato", Arial, sans-serif;
 
-@textColor: #212121;
+@textColor: rgba(26,26,26,.7);
 @iconColor: #FFF;
+
+@anchorColor: @accentColor;
 
 @buttonColor: @frontColor1;
 @buttonColorHover: lighten(@frontColor1, 20%);

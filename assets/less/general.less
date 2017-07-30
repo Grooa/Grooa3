@@ -1,5 +1,7 @@
 html {
-    font-family: @primaryFont;
+    color: @textColor;
+
+    font-family: @secondaryFont;
 
     @media (max-width: (0.5 * @pageWidth)) {
         font-size: 16px;
@@ -21,7 +23,8 @@ h2 {
 h1, h2, h3, h4, h5, h6 {
     color: @frontColor1;
     font-weight: lighter;
-    margin: 0 0 0;
+    font-family: @primaryFont;
+    margin: 0;
     padding: 0;
 
     > a {
@@ -31,13 +34,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    font-family: @secondaryFont;
     margin: 0;
     padding: 0.5em 0;
 }
 
 p.centered {
     text-align: center;
+}
+
+a {
+    color: @accentColor;
+
+    font-weight: 800;
+
+    text-decoration: none;
+    transition: @transition;
+
+    &:hover {
+        color: @accentLighten;
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: @accentColor;
+    }
+
+    &:visited {
+        color: @accentDarken;
+    }
 }
 
 ul, ol {
@@ -60,13 +84,20 @@ small.description {
 }
 
 // Global styles mostly used in rich text editor
+blockquote,
 .quote {
+    background-color: @primaryBackground;
+    border-left: @lineWidth solid @accentColor;
+
+    color: @textColor;
+
     display: block;
-    border-left: @lineWidth solid @frontColor2;
-    padding: 0.5em;
-    margin: 2em 10% 0.5em;
+
+    font-size: 1.2em;
     font-style: italic;
-    font-size: 120%;
+
+    padding: 0.5em;
+
     text-align: left;
 }
 
@@ -159,4 +190,16 @@ input[type="password"] {
         flex: 1;
         flex-basis: 15em;
     }
+}
+
+div.spacing {
+    background-color: #212121;
+
+    color: #FFF;
+
+    height: 20px;
+
+    text-align: center;
+
+    width: 100%;
 }

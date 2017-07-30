@@ -18,12 +18,17 @@
           content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src	'self' 'unsafe-inline' *; img-src 'self' data: *">
 
     <?php foreach (array(16, 32, 192) as $size) { ?>
-        <link
-                rel="icon"
-                type="image/png"
-                href="<?php echo ipThemeUrl("assets/icons/icon$size.png") ?>"
-                sizes="<?php echo "${size}x${size}" ?>">
-    <?php } ?>
+        <?php
+        $link = ipGetThemeOption('fav' . $size);
+
+        if (!empty($link)): ?>
+            <link rel="icon"
+                  type="image/png"
+                  href="<?php echo ipFileUrl('file/repository' . $link); ?>"
+                  sizes="<?php echo "${size}x${size}" ?>">
+            <?php
+        endif;
+    } ?>
 
     <?php if (ipConfig()->isDevelopmentEnvironment()) { ?>
         <script>
@@ -45,11 +50,15 @@
         <img
                 src="<?php echo ipThemeUrl('assets/img/logo.svg'); ?>"
                 alt="Grooa">
+        <h1>Grooa</h1>
     </a>
 
-    <div class="right">
+    <div class="navigation">
+        <span id="hamburgerMenu" class="hamburger"
+              title="Open menu"><?php include 'assets/icons/hamburger.svg'; ?></span>
+
         <?php
-        $result = \Ip\Menu\Helper::getMenuItems('menu2', 1, 1);
+        $secondaryMenu = \Ip\Menu\Helper::getMenuItems('menu2', 1, 1);
 
         // Load profile page or user-login, if User-plugin is activated
         $modules = \Ip\Internal\Plugins\Service::getActivePluginNames();
@@ -65,37 +74,19 @@
                 ipRouteUrl('User_login'));
 
             if (($loggedIn && $path == 'profile') ||
-                (!$loggedIn && $path == 'login')) {
+                (!$loggedIn && $path == 'login')
+            ) {
                 $userMenu->markAsCurrent(true);
             }
 
-            $result[] = $userMenu;
+            $secondaryMenu[] = $userMenu;
         }
 
         echo ipSlot('menu', array(
-            'items' => $result,
+            'items' => $secondaryMenu,
             'attributes' => array('class' => 'menu secondary')
         ));
         ?>
-
-        <?php
-        if (count(ipContent()->getLanguages()) > 1): ?>
-            <ul>
-                <li data-component="dropdown">
-                    <button class="language-button">
-                        <?php $language = ipContent()->getCurrentLanguage(); ?>
-                        <img class="flag" src="<?php echo ipThemeUrl(
-                            'assets/flags/' . $language->getCode() . '.svg'
-                        ); ?>" alt="">
-                        Language
-                    </button>
-
-                    <?php echo ipSlot('languages', array(
-                        'attributes' => array('class' => 'dropdown language-dropdown')
-                    )); ?>
-                </li>
-            </ul>
-        <?php endif; ?>
 
         <nav>
             <?php
@@ -109,3 +100,27 @@
         </nav>
     </div>
 </header>
+
+
+<div id="sideMenu" class="side-menu">
+    <div class="topbar">
+        <span class="spacing"></span>
+        <h3>Navigation</h3>
+        <?php include 'assets/icons/cross.svg'; ?>
+    </div>
+    <?php
+    $result = \Ip\Menu\Helper::getMenuItems('menu1', 1, 1);
+
+    echo ipSlot('menu', array(
+        'items' => $result,
+        'attributes' => array('class' => 'menu aside')
+    ));
+    ?>
+
+    <span class="line"></span>
+
+    <?= ipSlot('menu', [
+        'items' => $secondaryMenu,
+        'attributes' => ['class' => 'menu aside secondary']
+    ]) ?>
+</div>
