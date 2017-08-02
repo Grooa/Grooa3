@@ -1,6 +1,35 @@
-.home-banner  {
-    height: 50vh;
-    width: 100%;
+main.home {
+    text-align: center;
+
+    > #ipBlock-introduction {
+        align-items: center;
+
+        background-color: @secondaryBackground;
+
+        color: @textColor;
+
+        margin: auto;
+        max-width: @pageWidth;
+
+        padding: .5em 0;
+
+        width: 100%;
+
+        h1,
+        h2,
+        h3 {
+            color: @accentColor;
+        }
+
+        p {
+            color: inherit;
+        }
+
+        .ipWidget {
+            margin: 0;
+        }
+
+    }
 }
 
 .home-splash {
@@ -50,33 +79,6 @@
     }
 }
 
-#ipBlock-banner {
-    background: @secondaryBackground;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
-    box-shadow: @boxShadow;
-
-    max-width: @pageWidth;
-
-    width: 100%;
-
-    h1, h2, h3, h4, h5, h6, a {
-        color: @frontColor3;
-
-        margin: 0.5em 0.5em 0;
-    }
-
-    .ipWidget {
-        margin: 0;
-    }
-
-    @media (min-width: @pageWidth) {
-        > .ipWidget {
-            padding: 0 5rem;
-        }
-    }
-}
-
 #ipBlock-promotion {
     background: white;
     box-shadow: @shadow;
@@ -87,9 +89,7 @@
     max-width: 0.75 * @pageWidth;
 }
 
-main.home {
-    text-align: center;
-}
+
 
 .ipWidget-Image img {
     margin: 0 auto;

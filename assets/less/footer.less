@@ -1,6 +1,6 @@
 
 footer {
-    background: @frontColor1;
+    background: @footerColor;
     color: white;
     padding: 1em;
     text-align: center;
@@ -14,10 +14,17 @@ footer {
     }
 
     > div {
-        display: flex;
         align-items: center;
 
+        display: flex;
+
         flex-wrap: wrap;
+
+        margin: 0 auto;
+        max-width: @pageWidth;
+        min-height: 3em;
+
+        width: 100%;
 
         > * {
             flex: 1 1;
@@ -28,14 +35,6 @@ footer {
             order: -1;
         }
 
-        > .social {
-            order: 1;
-        }
-
-        min-height: 3em;
-        max-width: @pageWidth;
-        width: 100%;
-        margin: 0 auto;
 
         @media (max-width: (0.5 * @pageWidth)) {
             display: block;

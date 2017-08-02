@@ -76,7 +76,6 @@ header {
         justify-content: center; // Center vertically
 
     }
-
 }
 
 .logo {
@@ -95,8 +94,22 @@ header {
         height: 100%;
     }
 
+    svg {
+        fill: @primaryColor;
+    }
+
     > h1 {
         font-size: 3em;
+    }
+
+    &:hover {
+        text-decoration: none;
+
+        svg,
+        h1 {
+            fill: @primaryLighten;
+            color: @primaryLighten;
+        }
     }
 }
 
@@ -105,7 +118,6 @@ body.ipHasAdminPanel > header {
 }
 
 ul.menu {
-
 
     a {
         color: @primaryColor;

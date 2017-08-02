@@ -19,6 +19,8 @@ if (in_array('PageImage', \Ip\Internal\Plugins\Service::getActivePluginNames()))
             <?= ipBlock('banner') ?>
         </div>
     <?php endif; ?>
+    <?= ipBlock('introduction') ?>
+    <?= empty(ipAdminId()) ? '' : '<div class="spacing">Introduction end</div>' ?>
 
 	<?php echo ipBlock('main'); ?>
 </main>

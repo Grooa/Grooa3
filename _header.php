@@ -47,9 +47,7 @@
 
     <!-- Logo -->
     <a href="<?php echo ipHomeUrl() ?>" class="logo">
-        <img
-                src="<?php echo ipThemeUrl('assets/img/logo.svg'); ?>"
-                alt="Grooa">
+        <?php include('assets/img/logo.svg'); ?>
         <h1>Grooa</h1>
     </a>
 
