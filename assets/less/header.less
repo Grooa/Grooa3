@@ -83,8 +83,7 @@ header {
 a.logo {
     align-items: center;
 
-    //background-color: @primaryColor;
-    border-left: @primaryColor solid 1em;
+    background-color: @primaryColor;
 
     display: flex;
 
@@ -99,26 +98,25 @@ a.logo {
     }
 
     svg {
-        fill: @primaryColor;
+        fill: @iconColor;
     }
 
     h1 {
-        color: @primaryColor;
+        color: @iconColor;
 
         font-size: 3em;
     }
 
     &:hover {
-        //background-color: @primaryLighten;
-        border-left-color: @primaryLighten;
+        background-color: @primaryLighten;
 
         text-decoration: none;
 
         svg,
         h1 {
-            color: @primaryLighten;
+            color: @iconColor;
 
-            fill: @primaryLighten;
+            fill: @iconColor;
         }
     }
 }
