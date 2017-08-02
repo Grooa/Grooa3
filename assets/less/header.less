@@ -3,11 +3,11 @@
 @iconSize: 45px;
 
 .hoverable {
-    transition: background 0.2s ease-out;
+    transition: @transition;
 
     &:hover {
-        background: @lightBackground;
-        border-bottom: #CCC solid 2px;
+        //background: @lightBackground;
+        border-bottom-color: #CCC;
     }
 }
 
@@ -27,7 +27,7 @@ header {
 
     margin: 0 auto;
 
-    padding: 0 0.5em;
+    padding: 0;
 
     text-align: center;
 
@@ -75,12 +75,16 @@ header {
 
         justify-content: center; // Center vertically
 
+        padding: 0 1em;
+
     }
 }
 
-.logo {
+a.logo {
     align-items: center;
-    align-self: center;
+
+    //background-color: @primaryColor;
+    border-left: @primaryColor solid 1em;
 
     display: flex;
 
@@ -88,7 +92,7 @@ header {
 
     height: 100%;
 
-    margin: 1em;
+    padding: .5em 1em;
 
     > img {
         height: 100%;
@@ -98,17 +102,23 @@ header {
         fill: @primaryColor;
     }
 
-    > h1 {
+    h1 {
+        color: @primaryColor;
+
         font-size: 3em;
     }
 
     &:hover {
+        //background-color: @primaryLighten;
+        border-left-color: @primaryLighten;
+
         text-decoration: none;
 
         svg,
         h1 {
-            fill: @primaryLighten;
             color: @primaryLighten;
+
+            fill: @primaryLighten;
         }
     }
 }
@@ -119,6 +129,10 @@ body.ipHasAdminPanel > header {
 
 ul.menu {
 
+    li {
+        margin: 0;
+    }
+
     a {
         color: @primaryColor;
         font-weight: 400;
@@ -127,10 +141,18 @@ ul.menu {
     .active > a {
         font-weight: 800;
     }
+
+    & + nav {
+        margin-top: .2em;
+    }
 }
 
 ul.menu.secondary {
+    margin: 0;
 
+    a {
+        padding: .5em;
+    }
 }
 
 ul.menu.primary {
@@ -138,24 +160,20 @@ ul.menu.primary {
 
     margin: 0;
 
-    li {
-        display: inline-block;
-
-        margin: 0;
-    }
-
     a {
         .hoverable();
 
+        border-bottom: transparent solid 1px;
+
         display: inline-block;
 
-        padding: (@topNavHeight - 1em)/3 .5em;
+        padding: .2em .5em;
 
         text-decoration: none;
     }
 
     .active > a {
-        border-bottom: @frontColor1 solid 2px;
+        border-bottom-color: @primaryColor;
     }
 }
 
