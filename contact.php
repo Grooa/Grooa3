@@ -1,12 +1,6 @@
 <?php // @Layout name: Contact ?>
 
-<?php
-$hasPageImage = false;
-
-if (in_array('PageImage', \Ip\Internal\Plugins\Service::getActivePluginNames())) {
-    $hasPageImage = !empty(\Plugin\PageImage\Model::getPageImages(ipContent()->getCurrentPage()->getId()));
-}
-?>
+<?php include "_pageImage.php" ?>
 
 <?php echo ipView('_header.php', array('headerClass' => ''))->render(); ?>
 

@@ -10,6 +10,7 @@ button {
     display: inline-block;
 
     font-size: 0.9em;
+    font-weight: 100;
 
     line-height: 1;
 
@@ -24,7 +25,14 @@ button {
 
     &:hover {
         background: @primaryLighten;
+
         color: white;
+
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: @iconColor;
     }
 
     a {
@@ -40,7 +48,7 @@ button {
     &[disabled], .disabled {
         background: #ccc;
         border-color: #ccc;
-        color: @textColor;
+        color: lighten(@textColor, 10%);
         cursor: default;
     }
 
