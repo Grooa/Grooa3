@@ -14,7 +14,9 @@
         </div>
     <?php endif; ?>
 
-    <?php echo ipBlock('main'); ?>
+    <article>
+        <?php echo ipBlock('main'); ?>
+    </article>
 </main>
 
 <?php echo ipView('_footer.php')->render(); ?>
