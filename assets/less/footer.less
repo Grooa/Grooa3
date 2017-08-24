@@ -32,7 +32,28 @@ footer {
         }
 
         > .logo {
+            cursor: default;
             order: -1;
+
+            user-select: none;
+
+            strong,
+            svg {
+                color: @iconColor;
+
+                fill: @iconColor;
+                font-size: 2.0em;
+            }
+
+            &:hover {
+                strong,
+                svg {
+                    color: @iconColor;
+
+                    fill: @iconColor;
+                }
+
+            }
         }
 
 

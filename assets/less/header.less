@@ -80,10 +80,8 @@ header {
     }
 }
 
-a.logo {
+.logo {
     align-items: center;
-
-    background-color: @primaryColor;
 
     display: flex;
 
@@ -96,25 +94,28 @@ a.logo {
     }
 
     svg {
-        fill: @iconColor;
+        fill: @primaryColor;
     }
 
-    h1 {
-        color: @iconColor;
+    h1,
+    strong {
+        color: @primaryColor;
 
         font-size: 3em;
+        font-weight: 400;
+
+        text-transform: uppercase;
     }
 
     &:hover {
-        background-color: @primaryLighten;
-
         text-decoration: none;
 
         svg,
-        h1 {
-            color: @iconColor;
+        h1,
+        strong {
+            color: @primaryLighten;
 
-            fill: @iconColor;
+            fill: @primaryLighten;
         }
     }
 }

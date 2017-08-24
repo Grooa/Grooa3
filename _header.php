@@ -18,17 +18,10 @@
           content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src	'self' 'unsafe-inline' *; img-src 'self' data: *">
 
     <?php foreach (array(16, 32, 192) as $size) { ?>
-        <?php
-        $link = ipGetThemeOption('fav' . $size);
-
-        if (!empty($link)): ?>
-            <link rel="icon"
-                  type="image/png"
-                  href="<?php echo ipFileUrl('file/repository' . $link); ?>"
-                  sizes="<?php echo "${size}x${size}" ?>">
-            <?php
-        endif;
-    } ?>
+        <link rel="icon" type="image/png"
+              href="<?=ipThemeUrl('assets/icons/icon' . $size . '.png')?>"
+              sizes="<?="${size}x${size}"?>">
+    <?php } ?>
 
     <?php if (ipConfig()->isDevelopmentEnvironment()) { ?>
         <script>

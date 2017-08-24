@@ -1,9 +1,9 @@
 		<footer>
 			<div>
 				<div class="logo">
-					<img
-						src="<?php echo ipThemeUrl('assets/img/logo-white.svg'); ?>"
-						alt="Grooa">
+                    <?php include('assets/img/logo-white.svg'); ?>
+                    <strong>Grooa</strong>
+                    <em class="slogan">Leading with a Smile</em>
 				</div>
 				<div class="social">
 					<p class="centered">Follow us on</p>
