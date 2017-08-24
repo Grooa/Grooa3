@@ -22,16 +22,6 @@
               href="<?=ipThemeUrl('assets/icons/icon' . $size . '.png')?>"
               sizes="<?="${size}x${size}"?>">
     <?php } ?>
-
-    <?php if (ipConfig()->isDevelopmentEnvironment()) { ?>
-        <script>
-            document.write(
-                '<script src="http://' +
-                (location.host || 'localhost').split(':')[0] +
-                ':35729/livereload.js?snipver=1"></' + 'script>'
-            )
-        </script>
-    <?php } ?>
 </head>
 
 <body>
