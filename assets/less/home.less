@@ -28,69 +28,14 @@ main.home {
         .ipWidget {
             margin: 0;
         }
-
     }
-}
 
-.home-splash {
-    align-items: center;
+    > .banner > .image-container {
+        filter: brightness(100%);
 
-    background-attachment: fixed;
-    box-shadow: inset @shadow;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: flex-end;
-
-    margin-bottom: 1em;
-    min-height: 40vh;
-
-    overflow: hidden;
-
-    position: relative;
-
-    #ipBlock-splash {
-        background: @secondaryBackground;
-
-        margin: 8em auto 4em;
-        max-width: 0.75 * @pageWidth;
-
-        @media (max-width: (0.75 * @pageWidth)) {
-            margin: 0;
+        .image {
+            background-attachment: fixed;
+            background-position: center top;
         }
     }
-
-    .ipWidget-Text {
-        @media (min-width: (0.75 * @pageWidth)) {
-            font-size: 1.1em;
-
-            margin: 2em 0;
-        }
-    }
-
-    .ipWidget-Image {
-        display: flex;
-
-        flex-direction: column;
-
-        justify-content: flex-end;
-    }
-}
-
-#ipBlock-promotion {
-    background: white;
-    box-shadow: @shadow;
-
-    font-size: 1.1em;
-
-    margin: 3em 0 2em;
-    max-width: 0.75 * @pageWidth;
-}
-
-
-
-.ipWidget-Image img {
-    margin: 0 auto;
 }
