@@ -55,14 +55,19 @@
 
 #ipBlock-banner {
     background-color: transparent;
+    box-sizing: border-box;
 
     left: 50%;
+
+    padding: .5em 1em;
 
     position: absolute;
 
     text-align: center;
     transform: translate(-50%, -50%);
     top: 50%;
+
+    width: 100%;
 
     h1, h2, h3, p {
         color: @iconColor;
@@ -76,7 +81,7 @@
     }
 
     p {
-        font-size: 1.5em;
+        font-size: 1.3em;
         font-weight: 100;
     }
 
@@ -86,7 +91,6 @@
 
     @media screen and (max-width: @mobileWidth) {
         h1, h2, h3 {
-            margin-top: .5em;
             font-size: 2.5em;
         }
 

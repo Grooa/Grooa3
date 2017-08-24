@@ -3,7 +3,6 @@
 				<div class="logo">
                     <?php include('assets/img/logo-white.svg'); ?>
                     <strong>Grooa</strong>
-                    <em class="slogan">Leading with a Smile</em>
 				</div>
 				<div class="social">
 					<p class="centered">Follow us on</p>
