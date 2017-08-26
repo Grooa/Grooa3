@@ -13,7 +13,7 @@ if (in_array('PageImage', \Ip\Internal\Plugins\Service::getActivePluginNames()))
 <main class="article">
     <?php if ($hasPageImage): ?>
         <div class="banner">
-            <div class="image-container darkest<?= !empty($useBlur) ? 'blurred' : '' ?>">
+            <div class="image-container <?= !empty($useBlur) ? 'blurred' : '' ?>">
                 <div class="image" <?php echo ipSlot('bkgImage'); ?>></div>
             </div>
             <?= ipBlock('banner') ?>
