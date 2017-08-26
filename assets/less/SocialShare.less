@@ -11,14 +11,17 @@
 
     display: flex;
 
+    flex-wrap: wrap;
+
     justify-content: center;
 
     list-style-type: none;
 
     margin: auto auto;
-    max-width: 40em;
+    max-width: 30em;
 
     padding: 0 1em .5em;
+    position: relative;
 
     width: 100%;
 
@@ -27,40 +30,79 @@
 
         padding: 0;
 
-        a,
-        a > svg {
+        li {
+            flex: 0;
+        }
+
+        svg {
             height: 20px;
         }
 
         a {
-            border-radius: 2px;
+            height: 35px;
+
+            justify-content: center;
 
             padding: .5em 2em .5em 2em;
+
+            width: auto;
         }
     }
 
     li {
-        margin: 0;
+        box-shadow: @boxShadow;
+
+        flex: 1;
+
+        margin: .4em;
+
+        position: relative;
+
+        transition: @transition;
+
+        &:hover {
+            box-shadow: @boxShadowHover;
+        }
     }
 
-    > li~li { /* Ensure spacing between elements */
-        margin-left: .5em;
-    }
-
-    a, a > svg {
-        height: 30px;
+    a,
+    a > img,
+    a > svg {
+        height: 20px;
     }
 
     a {
-        background-color: #AAA;
+        align-items: center;
 
-        display: block;
+        background-color: #AAA; // Default button color
+        box-sizing: border-box;
 
-        height: 30px;
+        display: flex;
 
-        padding: .5em 5em .5em .5em;
+        justify-content: space-between;
+
+        height: 40px;
+
+        min-width: 7em;
+
+        padding: .5em;
 
         transition: all .2s ease;
+
+        width: 100%;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        > em {
+            color: @iconColor;
+
+            font-style: normal;
+            font-weight: 100;
+
+            text-align: right;
+        }
     }
 
     svg path {
@@ -85,3 +127,14 @@ a.share-linkedin:hover {
     background-color: #007BB6;
 }
 
+.socialshare a.share-twitter {
+    background-color: #3aaae1; // Twitter color
+
+    &:hover {
+        background-color: #3397C7;
+    }
+
+    img {
+        height: 30px;
+    }
+}

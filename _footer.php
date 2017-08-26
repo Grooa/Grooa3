@@ -9,14 +9,23 @@
                     <ul class="socialshare">
                         <li>
                             <a href="<?php echo ipGetThemeOption('facebookUrl'); ?>"
-                               class="share-facebook">
+                               class="share-facebook" rel="noopener" target="_blank">
                                 <?php include('assets/img/facebook.svg') ?>
+                                <em>Facebook</em>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo ipGetThemeOption('linkedinUrl'); ?>"
-                               class="share-linkedin">
+                               class="share-linkedin" rel="noopener" target="_blank">
                                 <?php include('assets/img/linkedin.svg') ?>
+                                <em>LinkedIn</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo ipGetThemeOption('twitterUrl'); ?>"
+                               class="share-twitter" rel="noopener" target="_blank">
+                                <?php include('assets/img/twitter.svg') ?>
+                                <em>Twitter</em>
                             </a>
                         </li>
                     </ul>
