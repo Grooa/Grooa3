@@ -1,3 +1,15 @@
+<?php
+$hasPageImage = false;
+$pageImage = null;
+
+if (in_array('PageImage', \Ip\Internal\Plugins\Service::getActivePluginNames()) &&
+    !empty(ipContent()->getCurrentPage())) {
+
+    $pageImage = \Plugin\PageImage\Model::getPageImages(ipContent()->getCurrentPage()->getId());
+    $hasPageImage = !empty($pageImage);
+}
+?>
+
 <?php echo ipDoctypeDeclaration(); ?>
 <html<?php echo ipHtmlAttributes(); ?>>
 
@@ -22,6 +34,16 @@
               href="<?=ipThemeUrl('assets/icons/icon' . $size . '.png')?>"
               sizes="<?="${size}x${size}"?>">
     <?php } ?>
+
+    <?// Facebook Open Graph, preview settings ?>
+    <?php if (!empty(ipContent()->getCurrentPage())): ?>
+        <meta property="og:url" content="<?=ipContent()->getCurrentPage()->getLink()?>" />
+
+        <?php if ($hasPageImage): ?>
+            <meta property="og:image" content="<?=ipFileUrl('file/repository/' . $pageImage[0])?>" />
+        <?php endif; ?>
+
+    <?php endif; ?>
 </head>
 
 <body>
