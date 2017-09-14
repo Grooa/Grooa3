@@ -70,13 +70,13 @@ if (in_array('PageImage', \Ip\Internal\Plugins\Service::getActivePluginNames()) 
             $loggedIn = ipUser()->isLoggedIn();
             $path = ipRequest()->getRelativePath();
 
-            $userMenu->setPageTitle($loggedIn ? 'My Profile' : 'Login');
-            $userMenu->setTitle($loggedIn ? 'My Profile' : 'Login');
+            $userMenu->setPageTitle($loggedIn ? 'My Page' : 'Login');
+            $userMenu->setTitle($loggedIn ? 'My Page' : 'Login');
             $userMenu->setUrl($loggedIn ?
-                ipConfig()->baseUrl() . ipGetOption('User.urlAfterRegistration', 'profile') :
+                ipConfig()->baseUrl() . ipGetOption('User.urlAfterLogin', 'profile') :
                 ipRouteUrl('User_login'));
 
-            if (($loggedIn && $path == 'profile') ||
+            if (($loggedIn && $path == 'my-page') ||
                 (!$loggedIn && $path == 'login')
             ) {
                 $userMenu->markAsCurrent(true);

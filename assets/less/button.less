@@ -2,7 +2,9 @@
 button {
     background: @primaryColor;
     border: 0;
+    border-radius: 2px;
     box-sizing: border-box;
+    box-shadow: @boxShadow;
 
     color: @iconColor;
     cursor: pointer;
@@ -25,6 +27,7 @@ button {
 
     &:hover {
         background: @primaryLighten;
+        box-shadow: @boxShadowHover;
 
         color: white;
 

@@ -5,15 +5,15 @@
 <main class="tracks-cover">
 
     <?php if (!empty($coverImage)): ?>
-        <div class="cover-image <?= empty($coverTitle) ? 'blurred' : '' ?>"
-            <?= isset($coverImage) ?
-                "style=\"background-image: url(" . $coverImage . ");\"" :
-                '' ?>>
-
-            <?php if (isset($coverTitle)): ?>
+		<div class="banner">
+        	<div class="image-container">
+            	<div class="image" <?= isset($coverImage) ? "style=\"background-image: url(" . $coverImage . ");\"" :'' ?>></div>
+        	</div>
+           
+			<?php if (isset($coverTitle)): ?>
                 <h1><?= $coverTitle ?></h1>
             <?php endif; ?>
-        </div>
+		</div>
     <? endif; ?>
 
     <article>

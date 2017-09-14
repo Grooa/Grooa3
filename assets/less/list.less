@@ -37,6 +37,38 @@ ul.tiled {
 
         padding: 0;
         position: relative;
+
+        > a:not(.button) {
+            color: inherit;
+
+            font-weight: 400;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        a.button {
+            background-color: @frontColor1;
+            border: 0;
+            border-radius: 0;
+
+            box-sizing: border-box;
+
+            color: #FFF;
+
+            display: block;
+
+            margin-top: auto;
+
+            padding: 1em;
+
+            text-align: center;
+
+            &:hover {
+                background-color: lighten(@frontColor1, 5%);
+            }
+        }
     }
 
     .metadata {
@@ -98,27 +130,6 @@ ul.tiled {
         padding: 0 .5em;
     }
 
-    a {
-        background-color: @frontColor1;
-        border: 0;
-
-        box-sizing: border-box;
-
-        color: #FFF;
-
-        display: block;
-
-        margin-top: auto;
-
-        padding: 1em;
-
-        text-align: center;
-
-        &:hover {
-            background-color: lighten(@frontColor1, 5%);
-        }
-    }
-
 }
 
 ul.shadowed > li {
@@ -178,6 +189,24 @@ ul.x-breadcrumbs {
 
         &:hover {
             text-decoration: underline;
+        }
+    }
+}
+
+nav.vertical {
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 1em;
+
+    > a {
+        text-align: center;
+
+        &~a {
+            margin-top: .5em;
         }
     }
 }
