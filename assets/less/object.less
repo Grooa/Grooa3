@@ -18,3 +18,17 @@
 .ipWidget.object {
     max-width: @moduleWidth;
 }
+
+.columns {
+    align-items: center;
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    > * {
+        flex: 1;
+        flex-basis: 10em;
+    }
+}
