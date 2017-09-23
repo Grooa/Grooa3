@@ -145,6 +145,17 @@ ul.shadowed > li {
     }
 }
 
+ul.dashed {
+    list-style-type: none;
+
+    padding: .5em 1em;
+
+    > li::before {
+        content: "- ";
+        margin-right: .5em;
+    }
+}
+
 ul.x-breadcrumbs {
     background-color: #FFF;
     border-radius: 2px;
