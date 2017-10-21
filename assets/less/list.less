@@ -135,15 +135,16 @@ ul.tiled {
 }
 
 ul.shadowed > li {
+    .z-2;
+    .shadow-transition;
+
     border-radius: 2px;
-    box-shadow: @boxShadow;
 
     overflow: hidden;
 
-    transition: @transition;
 
     &:hover {
-        box-shadow: @boxShadowHover;
+        .z-1-hover;
     }
 }
 

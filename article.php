@@ -16,7 +16,9 @@ if (in_array('PageImage', \Ip\Internal\Plugins\Service::getActivePluginNames()))
             <div class="image-container <?= !empty($useBlur) ? 'blurred' : '' ?>">
                 <div class="image" <?php echo ipSlot('bkgImage'); ?>></div>
             </div>
-            <?= ipBlock('banner') ?>
+            <div class="banner-block">
+                <?= ipBlock('banner') ?>
+            </div>
         </div>
     <?php endif; ?>
 

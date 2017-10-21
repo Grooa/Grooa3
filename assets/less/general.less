@@ -9,7 +9,27 @@ html {
 }
 
 body {
+    align-items: stretch;
+
     background-color: @secondaryBackground;
+
+    display: flex;
+
+    flex-direction: column;
+    font-size: 16px;
+
+    justify-content: space-between;
+
+    min-height: 100vh;
+
+    @media screen and (max-width: @mobileWidth) {
+        font-size: 14px;
+    }
+
+
+    > footer {
+        margin-top: auto;
+    }
 }
 
 h1 {
@@ -208,4 +228,17 @@ div.spacing {
 
 .center {
     text-align: center;
+}
+
+.card {
+    .z-1;
+    background-color: #FFF;
+    box-sizing: border-box;
+
+    margin: auto;
+    max-width: 50em;
+
+    padding: 1em;
+
+    width: 100%;
 }

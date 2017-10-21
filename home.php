@@ -10,12 +10,14 @@
             <div class="image-container <?= !empty($useBlur) ? 'blurred' : '' ?>">
                 <div class="image" <?php echo ipSlot('bkgImage'); ?>></div>
             </div>
-            <?= ipBlock('banner') ?>
+            <div class="banner-block">
+                <section class="card">
+                    <?=ipSlot('text', ['id' => 'pageTitle', 'tag' => 'h1'])?>
+                    <?=ipSlot('text', ['id' => 'pageIntroduction', 'tag' => 'p'])?>
+                </section>
+            </div>
         </div>
     <?php endif; ?>
-    <?= ipBlock('introduction') ?>
-    <?= empty(ipAdminId()) ? '' : '<div class="spacing">Introduction end</div>' ?>
-
 	<?php echo ipBlock('main'); ?>
 </main>
 

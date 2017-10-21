@@ -1,5 +1,5 @@
 .banner {
-    min-height: 40vh;
+    min-height: 60vh;
 
     width: 100%;
 
@@ -10,7 +10,7 @@
     .image-container {
         filter: brightness(95%);
 
-        height: 20em;
+        height: 60vh;
 
         margin: 0 auto;
 
@@ -47,6 +47,24 @@
         overflow: hidden;
     }
 
+    .banner-block {
+        align-items: center;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        justify-content: center;
+
+        margin: auto;
+        min-height: 60vh;
+
+        padding: 1em;
+        position: relative;
+
+        width: 100%;
+    }
+
     @media screen and (max-width: @mobileWidth) {
         min-height: 30vh;
     }
@@ -54,24 +72,22 @@
 }
 
 #ipBlock-banner {
-    background-color: transparent;
+    .z-4;
+    .border-radius;
+
+    background-color: #FFF;
     box-sizing: border-box;
 
-    left: 50%;
+    margin: auto;
+    max-width: 50em;
 
-    padding: .5em 1em;
-
-    position: absolute;
+    padding: 1em;
 
     text-align: center;
-    transform: translate(-50%, -50%);
-    top: 50%;
 
     width: 100%;
 
     h1, h2, h3, p {
-        color: @iconColor;
-
         margin: 0;
         padding: 0;
     }

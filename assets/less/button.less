@@ -1,10 +1,12 @@
 .button,
 button {
+    .z-1;
+    .shadow-transition;
+    .border-radius;
+
     background: @primaryColor;
     border: 0;
-    border-radius: 2px;
     box-sizing: border-box;
-    box-shadow: @boxShadow;
 
     color: @iconColor;
     cursor: pointer;
@@ -20,15 +22,14 @@ button {
 
     text-align: center;
     text-decoration: none;
-    transition: @transition;
 
     &:focus {
         outline: none;
     }
 
     &:hover {
+        .z-2;
         background: @primaryLighten;
-        box-shadow: @boxShadowHover;
 
         color: white;
 
