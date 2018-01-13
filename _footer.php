@@ -1,9 +1,6 @@
 		<footer>
 			<div>
-				<div class="logo">
-                    <?php include('assets/img/logo-white.svg'); ?>
-                    <strong>Grooa</strong>
-				</div>
+				<?= ipBlock('footer-left')->asStatic() ?>
 				<div class="social">
 					<p class="centered">Follow us on</p>
                     <ul class="socialshare">
@@ -34,8 +31,11 @@
 						src="<?php echo ipThemeUrl('assets/img/rss.svg'); ?>"
 						alt="RSS"></a> */ ?>
 				</div>
-				<?php echo ipBlock('footer')->asStatic(); ?>
+				<?php echo ipBlock('footer-right')->asStatic(); ?>
 			</div>
+            <div class="bottom">
+                <p class="centered copyright"><?= date('Y')?> &copy; Grooa Inc</p>
+            </div>
 		</footer>
 
 		<?php echo ipJs(); ?>

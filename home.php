@@ -13,7 +13,7 @@
             <div class="banner-block">
                 <section class="card">
                     <?=ipSlot('text', ['id' => 'pageTitle', 'tag' => 'h1'])?>
-                    <?=ipSlot('text', ['id' => 'pageIntroduction', 'tag' => 'p'])?>
+                    <?=ipSlot('text', ['id' => 'pageIntroduction', 'tag' => 'div'])?>
                 </section>
             </div>
         </div>

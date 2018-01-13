@@ -1,9 +1,12 @@
 
 footer {
-    background: @footerColor;
-    color: white;
-    padding: 1em;
-    text-align: center;
+    background: #FFF;
+    border-top: #DDD solid 1px;
+    color: #212121;
+
+    padding: 0;
+
+    text-align: left;
 
     a {
         color: inherit;
@@ -28,36 +31,15 @@ footer {
 
         > * {
             flex: 1 1;
-            margin: 1em;
+            margin: .5em;
         }
-
-        > .logo {
-            cursor: default;
-            order: -1;
-
-            user-select: none;
-
-            strong,
-            svg {
-                color: @iconColor;
-
-                fill: @iconColor;
-                font-size: 2.0em;
-            }
-
-            &:hover {
-                strong,
-                svg {
-                    color: @iconColor;
-
-                    fill: @iconColor;
-                }
-            }
-        }
-
 
         @media (max-width: (0.5 * @pageWidth)) {
             display: block;
         }
+    }
+
+    > .bottom .copyright {
+        margin: 0;
     }
 }
