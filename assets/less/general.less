@@ -89,7 +89,7 @@ a {
     color: @accentColor;
 
     font-weight: 100;
-    
+
     transition: @transition;
 
     &:hover {
@@ -179,30 +179,6 @@ textarea {
     &:focus {
         outline: none;
         border-color: @frontColor1;
-    }
-
-    & + .help-error {
-        display: none;
-    }
-}
-
-input[type="email"] {
-    &:invalid + .help-error {
-        display: inline;
-
-        &:before {
-            content: "The form requires a valid email address";
-        }
-    }
-}
-
-input[type="password"] {
-    &:invalid + .help-error {
-        display: inline;
-
-        &:before {
-            content: "The form requires a valid password";
-        }
     }
 }
 
