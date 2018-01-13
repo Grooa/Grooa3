@@ -11,7 +11,7 @@
                 <div class="image" <?php echo ipSlot('bkgImage'); ?>></div>
             </div>
             <div class="banner-block">
-                <section class="card">
+                <section class="banner-card">
                     <?=ipSlot('text', ['id' => 'pageTitle', 'tag' => 'h1'])?>
                     <?=ipSlot('text', ['id' => 'pageIntroduction', 'tag' => 'div'])?>
                 </section>
