@@ -7,6 +7,13 @@ if (in_array('PageImage', \Ip\Internal\Plugins\Service::getActivePluginNames()) 
 
     $pageImage = \Plugin\PageImage\Model::getPageImages(ipContent()->getCurrentPage()->getId());
     $hasPageImage = !empty($pageImage);
+
+    if ($hasPageImage) {
+        $pageImage = ipFileUrl('file/repository/' . $pageImage[0]);
+    }
+} else if (!empty($ogImage)) {
+    $hasPageImage = true;
+    $pageImage = $ogImage;
 }
 ?>
 
@@ -38,11 +45,10 @@ if (in_array('PageImage', \Ip\Internal\Plugins\Service::getActivePluginNames()) 
     <?// Facebook Open Graph, preview settings ?>
     <?php if (!empty(ipContent()->getCurrentPage())): ?>
         <meta property="og:url" content="<?=ipContent()->getCurrentPage()->getLink()?>" />
+    <?php endif; ?>
 
-        <?php if ($hasPageImage): ?>
-            <meta property="og:image" content="<?=ipFileUrl('file/repository/' . $pageImage[0])?>" />
-        <?php endif; ?>
-
+    <?php if ($hasPageImage): ?>
+        <meta property="og:image" content="<?= $pageImage ?>" />
     <?php endif; ?>
 </head>
 
