@@ -24,15 +24,15 @@ scp * ${SCP_DIR}/
 
 # Assets
 printf "Moving assets\n"
-scp -r assets/ ${SCP_DIR}/assets/
+scp -r assets/ ${SCP_DIR}/
 
 # Overrides
 printf "Moving overrides\n"
-scp -r override/ ${SCP_DIR}/override/
+scp -r override/ ${SCP_DIR}/
 
 # Setup
 printf "Moving setup files\n"
-scp -r setup/ ${SCP_DIR}/setup/
+scp -r setup/ ${SCP_DIR}/
 
 ##
 # Remove src control files
