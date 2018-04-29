@@ -1,0 +1,30 @@
+{
+    "fileExtensions": [".less"],
+
+    "comment": { "enabled": true },
+    "excludedFiles": [],
+
+    "qualifyingElement": {
+        "enabled": true,
+        "allowWithAttribute": true,
+        "allowWithClass": true,
+        "allowWithId": false
+    },
+    "singleLinePerProperty": { "enabled": true },
+    "singleLinePerSelector": { "enabled": true },
+
+    "spaceAfterPropertyColon": { "enabled": true, "style": "one_space" },
+    "spaceAfterPropertyName": { "enabled": true, "style": "no_space" },
+    "spaceAfterPropertyValue": { "enabled": true, "style": "no_space" },
+
+    "spaceAroundComma": { "enabled": true, "style": "after" },
+    "spaceBeforeBrace": { "enabled": true, "style": "one_space" },
+    "spaceBetweenParens": { "enabled": true, "style": "no_space" },
+    "stringQuotes": { "enabled": true, "style": "single" },
+    "trailingSemicolon": { "enabled": true },
+    "trailingWhitespace": { "enabled": true },
+    "trailingZero": { "enabled": true },
+    "urlFormat": { "enabled": true, "style": "relative" },
+    "urlQuotes": { "enabled": true },
+    "zeroUnit": { "enabled": true, "style": "no_unit" }
+}

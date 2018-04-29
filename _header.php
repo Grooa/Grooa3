@@ -38,17 +38,17 @@ if (in_array('PageImage', \Ip\Internal\Plugins\Service::getActivePluginNames()) 
 
     <?php foreach (array(16, 32, 192) as $size) { ?>
         <link rel="icon" type="image/png"
-              href="<?=ipThemeUrl('assets/icons/icon' . $size . '.png')?>"
-              sizes="<?="${size}x${size}"?>">
+              href="<?= ipThemeUrl('assets/icons/icon' . $size . '.png') ?>"
+              sizes="<?= "${size}x${size}" ?>">
     <?php } ?>
 
-    <?// Facebook Open Graph, preview settings ?>
+    <? // Facebook Open Graph, preview settings ?>
     <?php if (!empty(ipContent()->getCurrentPage())): ?>
-        <meta property="og:url" content="<?=ipContent()->getCurrentPage()->getLink()?>" />
+        <meta property="og:url" content="<?= ipContent()->getCurrentPage()->getLink() ?>"/>
     <?php endif; ?>
 
     <?php if ($hasPageImage): ?>
-        <meta property="og:image" content="<?= $pageImage ?>" />
+        <meta property="og:image" content="<?= $pageImage ?>"/>
     <?php endif; ?>
 </head>
 
@@ -58,56 +58,42 @@ if (in_array('PageImage', \Ip\Internal\Plugins\Service::getActivePluginNames()) 
 
     <!-- Logo -->
     <a href="<?php echo ipHomeUrl() ?>" class="logo">
-        <?php include('assets/img/logo.svg'); ?>
+        <img src="<?= ipThemeUrl('assets/img/logo.svg') ?>" alt="Logo">
         <h1>Grooa</h1>
     </a>
 
-    <div class="navigation">
-        <span id="hamburgerMenu" class="hamburger"
-              title="Open menu"><?php include 'assets/icons/hamburger.svg'; ?></span>
+    <?php
+    $result = \Ip\Menu\Helper::getMenuItems('menu1', 1, 1);
 
-        <?php
-        $secondaryMenu = \Ip\Menu\Helper::getMenuItems('menu2', 1, 1);
+    // Load profile page or user-login, if User-plugin is activated
+    $modules = \Ip\Internal\Plugins\Service::getActivePluginNames();
+    if (in_array('User', $modules)) {
+        $userMenu = new \Ip\Menu\Item();
+        $loggedIn = ipUser()->isLoggedIn();
+        $path = ipRequest()->getRelativePath();
 
-        // Load profile page or user-login, if User-plugin is activated
-        $modules = \Ip\Internal\Plugins\Service::getActivePluginNames();
-        if (in_array('User', $modules)) {
-            $userMenu = new \Ip\Menu\Item();
-            $loggedIn = ipUser()->isLoggedIn();
-            $path = ipRequest()->getRelativePath();
+        $userMenu->setPageTitle($loggedIn ? 'My Page' : 'Login');
+        $userMenu->setTitle($loggedIn ? 'My Page' : 'Login');
+        $userMenu->setUrl($loggedIn ?
+            ipConfig()->baseUrl() . ipGetOption('User.urlAfterLogin', 'profile') :
+            ipRouteUrl('User_login'));
 
-            $userMenu->setPageTitle($loggedIn ? 'My Page' : 'Login');
-            $userMenu->setTitle($loggedIn ? 'My Page' : 'Login');
-            $userMenu->setUrl($loggedIn ?
-                ipConfig()->baseUrl() . ipGetOption('User.urlAfterLogin', 'profile') :
-                ipRouteUrl('User_login'));
-
-            if (($loggedIn && $path == 'my-page') ||
-                (!$loggedIn && $path == 'login')
-            ) {
-                $userMenu->markAsCurrent(true);
-            }
-
-            $secondaryMenu[] = $userMenu;
+        if (($loggedIn && $path == 'my-page') ||
+            (!$loggedIn && $path == 'login')
+        ) {
+            $userMenu->markAsCurrent(true);
         }
 
-        echo ipSlot('menu', array(
-            'items' => $secondaryMenu,
-            'attributes' => array('class' => 'menu secondary')
-        ));
-        ?>
+        $result[] = $userMenu;
+    }
 
-        <nav>
-            <?php
-            $result = \Ip\Menu\Helper::getMenuItems('menu1', 1, 1);
+    echo ipSlot('menu', array(
+        'items' => $result,
+        'attributes' => array('class' => 'menu')
+    )); ?>
 
-            echo ipSlot('menu', array(
-                'items' => $result,
-                'attributes' => array('class' => 'menu primary')
-            ));
-            ?>
-        </nav>
-    </div>
+    <span id="hamburgerMenu" class="hamburger"
+          title="Open menu"><?php include 'assets/icons/hamburger.svg'; ?></span>
 </header>
 
 
