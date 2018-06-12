@@ -1,57 +1,41 @@
 
-main {
-    > * {
-        //padding: 0 1em;
-    }
-}
-
 .cover-image {
-    height: 20em;
+  height: 20em;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 
-    margin: 0 auto;
-
-    overflow: hidden;
-
-    position: relative;
-
-    width: 100%;
-
-    &.blurred > .main-image {
-        background-size: auto 120% !important;
-
-        filter: blur(40px) brightness(90%);
-
-        left: -10%;
-
-        top: -5%;
-
-        width: 120%;
-    }
+  &.blurred > .main-image {
+    background-size: auto 120% !important;
+    filter: blur(40px) brightness(90%);
+    left: -10%;
+    top: -5%;
+    width: 120%;
+  }
 }
 
 main > #ipBlock-main {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    padding: .5em 0;
+  padding: 0;
 
-    > * {
-        padding: 0 .5em;
-    }
+  > * {
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 40em) {
-    .cover-image {
-        height: 14em;
-    }
+  .cover-image {
+    height: 14em;
+  }
 }
 
 .course-block {
-
   padding-bottom: 1em;
 
   > article {
     box-sizing: border-box;
-
     padding: 1em;
     position: relative;
   }

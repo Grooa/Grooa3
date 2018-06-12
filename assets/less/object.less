@@ -82,7 +82,11 @@
 
 .page-module-header {
 
+  height: 20em;
+
   position: relative;
+
+  overflow: hidden;
 
   width: 100%;
 
@@ -95,6 +99,52 @@
 
   .subtitle {
     font-style: normal;
+  }
+}
+
+.page-module-main {
+  box-sizing: border-box;
+
+  margin: auto;
+  max-width: 50em;
+
+  padding: 1em;
+  position: relative;
+
+  width: 100%;
+}
+
+.image-container {
+  height: 100%;
+
+  overflow: hidden;
+
+  position: absolute;
+
+  width: 100%;
+
+  > img {
+    position: absolute;
+
+    width: 100%;
+  }
+}
+
+.title-container {
+  bottom: 0;
+
+  color: #ffffff;
+
+  margin: 1em 2em;
+
+  position: absolute;
+
+  text-shadow: rgba(0, 0, 0, .2) 2px 2px 3px;
+
+  > h2 {
+    color: #ffffff;
+
+    font-size: 2em;
   }
 }
 

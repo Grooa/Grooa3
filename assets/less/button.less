@@ -1,9 +1,6 @@
 .button,
+.btn,
 button {
-    .z-1;
-    .shadow-transition;
-    .border-radius;
-
     background: @primaryColor;
     border: 0;
     box-sizing: border-box;
@@ -77,11 +74,22 @@ button {
     }
 
     &.lonely {
-        margin: 1em autov;
+        margin: 1em auto;
         max-width: 30em;
 
         width: 100%;
     }
+}
+
+.btn-pill {
+  border-radius: 50px;
+
+  display: block;
+
+  margin: 1em auto;
+  max-width: 30em;
+
+  width: 100%;
 }
 
 .button.colored {

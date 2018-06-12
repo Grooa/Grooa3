@@ -1,34 +1,28 @@
 html {
-    color: @textColor;
+  color: @textColor;
+  font-family: @secondaryFont;
 
-    font-family: @secondaryFont;
-
-    @media (max-width: (0.5 * @pageWidth)) {
-        font-size: 16px;
-    }
+  @media (max-width: (0.5 * @pageWidth)) {
+    font-size: 16px;
+  }
 }
 
 body {
-    align-items: stretch;
+  align-items: stretch;
+  background-color: @secondaryBackground;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  justify-content: space-between;
+  min-height: 100vh;
 
-    background-color: @secondaryBackground;
+  @media screen and (max-width: @mobileWidth) {
+    font-size: 14px;
+  }
 
-    display: flex;
-
-    flex-direction: column;
-    font-size: 16px;
-
-    justify-content: space-between;
-
-    min-height: 100vh;
-
-    @media screen and (max-width: @mobileWidth) {
-        font-size: 14px;
-    }
-
-    > footer {
-        margin-top: auto;
-    }
+  > footer {
+    margin-top: auto;
+  }
 }
 
 h1,
@@ -37,125 +31,112 @@ h3,
 h4,
 h5,
 h6 {
-    color: #555;
+  color: #555555;
+  font-family: @primaryFont;
+  margin: 0;
+  padding: 0.5em;
 
-    font-family: @primaryFont;
+  text-align: center;
 
-    margin: 0;
+  > a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
 
-    padding: 0;
-
-    > a {
-        text-decoration: none;
-        color: inherit;
-    }
+h1,
+h2 {
+  font-size: 2em;
 }
 
 h1 {
-    color: @frontColor1;
-
-    font-size: 2em;
+  color: @frontColor1;
 }
 
 h2,
 h3 {
-    color: #555;
-
-    font-weight: 800;
-
-    text-align: left;
+  font-weight: 800;
 }
 
-h2 {
-    font-size: 1.4em;
+h3 {
+  font-size: 1.4em;
 }
 
 h4,
 h5,
 h6 {
-   font-weight: 100;
+  font-weight: 100;
 }
 
 p {
-    margin: 0;
-    padding: 0.5em 0;
+  margin: 0;
+  padding: 0.5em 0;
 
-    &.centered {
-        text-align: center;
-    }
+  &.centered {
+    text-align: center;
+  }
 }
 
 a {
+  color: @accentColor;
+  font-weight: 100;
+  transition: @transition;
+
+  &:hover {
+    color: @accentLighten;
+    text-decoration: underline;
+  }
+
+  &:active {
     color: @accentColor;
+  }
 
-    font-weight: 100;
-
-    transition: @transition;
-
-    &:hover {
-        color: @accentLighten;
-        text-decoration: underline;
-    }
-
-    &:active {
-        color: @accentColor;
-    }
-
-    &:visited {
-        color: @accentDarken;
-    }
+  &:visited {
+    color: @accentDarken;
+  }
 }
 
 ul, ol {
-    margin: 1em;
+  margin: 1em;
 }
 
 li {
-    margin: 0.5em 0;
+  margin: 0.5em 0;
 }
 
 date {
-    font-style: italic;
+  font-style: italic;
 }
 
 small.description {
-    display: block;
-    text-align: center;
-    font-size: 1.0em;
-    font-weight: 100;
+  display: block;
+  text-align: center;
+  font-size: 1.0em;
+  font-weight: 100;
 }
 
 // Global styles mostly used in rich text editor
 blockquote,
 .quote {
-    color: @accentColor;
-
-    display: block;
-
-    font-size: 1.0em;
-    font-style: italic;
-
-    padding: 0;
-
-    text-align: left;
-
-    &::before,
-    &::after {
-        content: "\"";
-    }
+  color: @accentColor;
+  display: block;
+  font-size: 1.0em;
+  font-style: italic;
+  padding: 0;
+  text-align: left;
 }
 
 .note {
-    display: block;
+  display: block;
 }
 
 label {
-    font-size: 0.9em;
-    font-weight: 100;
+  font-size: 0.9em;
+  font-weight: 100;
 }
 
 input {
-    padding: .2em;
+  padding: .2em;
 }
 
 input[type="text"],
@@ -163,74 +144,61 @@ input[type="password"],
 input[type="number"],
 input[type="email"],
 textarea {
-    background: @primaryBackground;
-    border: #DDD solid 1px;
-    border-radius: 2px;
-    box-sizing: border-box;
+  background: @primaryBackground;
+  border: #dddddd solid 1px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  max-width: none;
+  width: 100%;
 
-    max-width: none;
+  &:hover {
+    border-color: #cccccc;
+  }
 
-    width: 100%;
-
-    &:hover {
-       border-color: #CCC;
-    }
-
-    &:focus {
-        outline: none;
-        border-color: @frontColor1;
-    }
+  &:focus {
+    outline: none;
+    border-color: @frontColor1;
+  }
 }
 
 .big {
-    margin: 0 .1em;
-    font-size: 1.6em;
-    font-weight: lighter;
-    color: @frontColor3;
+  margin: 0 .1em;
+  font-size: 1.6em;
+  font-weight: lighter;
+  color: @frontColor3;
 }
 
 .horizontal {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: @moduleWidth !important;
+  width: 100%;
 
-    justify-content: space-between;
-
-    flex-wrap: wrap;
-
-    max-width: @moduleWidth !important;
-
-    width: 100%;
-
-    > * {
-        flex: 1;
-        flex-basis: 15em;
-    }
+  > * {
+    flex: 1;
+    flex-basis: 15em;
+  }
 }
 
 div.spacing {
-    background-color: #212121;
-
-    color: #FFF;
-
-    height: 20px;
-
-    text-align: center;
-
-    width: 100%;
+  background-color: #212121;
+  color: #ffffff;
+  height: 20px;
+  text-align: center;
+  width: 100%;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .card {
-    .z-1;
-    background-color: #FFF;
-    box-sizing: border-box;
-
-    margin: auto;
-    max-width: 40em;
-
-    padding: .5em;
-
-    width: 100%;
+  .z-1;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  margin: auto;
+  max-width: 40em;
+  padding: .5em;
+  width: 100%;
 }
