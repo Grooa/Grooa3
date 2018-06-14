@@ -11,7 +11,7 @@
     </div>
 
     <?php echo ipBlock('main'); ?>
-    
+
     <article class="page-module page-module-light page-module-centered page-module-top-fears">
         <?= ipSlot('text', ['id' => 'fearsTitle', 'tag' => 'h2']) ?>
 
