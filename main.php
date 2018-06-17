@@ -7,7 +7,7 @@
 <main>
     <?php if ($hasPageImage): ?>
         <div class="banner">
-            <div class="image-container darkest<?= !empty($useBlur) ? 'blurred' : '' ?>">
+            <div class="image-container <?= !empty($useBlur) ? 'blurred' : '' ?>">
                 <div class="image" <?php echo ipSlot('bkgImage'); ?>></div>
             </div>
             <div class="banner-block">

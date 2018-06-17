@@ -1,132 +1,143 @@
 .banner {
-    min-height: 40vh;
+  min-height: 40vh;
 
-    width: 100%;
+  width: 100%;
+
+  overflow: hidden;
+
+  position: relative;
+
+  .image-container {
+    filter: brightness(95%);
+
+    height: 40vh;
+
+    margin: 0 auto;
 
     overflow: hidden;
 
+    position: absolute;
+
+    width: 100%;
+
+    &.darkest {
+      filter: brightness(90%);
+    }
+
+    &.blurred > * {
+      background-size: auto 120% !important;
+
+      filter: blur(40px) brightness(90%);
+
+      left: -10%;
+
+      top: -5%;
+
+      width: 120%;
+    }
+  }
+
+  .image {
+    background-size: auto 100%;
+    background: no-repeat fixed center top;
+
+    height: 100%;
+
+    margin: 0;
+    overflow: hidden;
+
+    width: 100%;
+  }
+
+  .banner-block {
+    align-items: flex-end;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    justify-content: center;
+
+    margin: auto;
+
+    min-height: 40vh;
+
+    padding: 1em;
     position: relative;
 
-    .image-container {
-        filter: brightness(95%);
+    width: 100%;
 
-        height: 40vh;
+    text-align: center;
 
-        margin: 0 auto;
+    > .banner-card {
+      .z-1;
 
-        overflow: hidden;
+      background-color: #ffffff;
+      box-sizing: border-box;
 
-        position: absolute;
+      margin: auto;
+      max-width: 40em;
 
-        width: 100%;
+      padding: .5em;
 
-        &.darkest {
-            filter: brightness(90%);
-        }
-
-        &.blurred > * {
-            background-size: auto 120% !important;
-
-            filter: blur(40px) brightness(90%);
-
-            left: -10%;
-
-            top: -5%;
-
-            width: 120%;
-        }
+      width: 100%;
     }
+  }
 
-    .image {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        background-size: auto 100%;
-        background: no-repeat fixed center top;
-
-        overflow: hidden;
-    }
-
-    .banner-block {
-        align-items: center;
-
-        box-sizing: border-box;
-
-        display: flex;
-
-        justify-content: center;
-
-        margin: auto;
-        min-height: 40vh;
-
-        padding: 1em;
-        position: relative;
-
-        width: 100%;
-
-        text-align: center;
-
-        > .banner-card {
-            .z-1;
-            background-color: #FFF;
-            box-sizing: border-box;
-
-            margin: auto;
-            max-width: 40em;
-
-            padding: .5em;
-
-            width: 100%;
-        }
-    }
-
-    @media screen and (max-width: @mobileWidth) {
-        min-height: 30vh;
-    }
+  @media screen and (max-width: @mobileWidth) {
+    min-height: 30vh;
+  }
 
 }
 
 #ipBlock-banner {
-    .z-4;
-    .border-radius;
+  box-sizing: border-box;
+  //margin: auto;
 
-    background-color: #FFF;
-    box-sizing: border-box;
+  max-width: 50em;
 
-    margin: auto;
-    max-width: 50em;
+  padding: 0;
 
-    padding: 1em;
+  text-align: center;
 
-    text-align: center;
+  width: 100%;
 
-    width: 100%;
+  h1,
+  h2,
+  h3,
+  p {
+    color: #ffffff;
 
-    h1, h2, h3, p {
-        margin: 0;
-        padding: 0;
-    }
+    margin: 0;
 
+    padding: 0;
+
+    text-align: left;
+    text-shadow: rgba(0, 0, 0, .4) 1px 1px 4px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 1.3em;
+    font-weight: 100;
+  }
+
+  .ipWidget { // Uneccessary padding when in banner
+    margin: 0;
+  }
+
+  @media screen and (max-width: @mobileWidth) {
     h1, h2, h3 {
-        font-size: 3em;
+      font-size: 2.5em;
     }
 
     p {
-        font-size: 1.3em;
-        font-weight: 100;
+      font-size: 1em;
     }
-
-    .ipWidget { // Uneccessary padding when in banner
-        margin: 0;
-    }
-
-    @media screen and (max-width: @mobileWidth) {
-        h1, h2, h3 {
-            font-size: 2.5em;
-        }
-
-        p {
-            font-size: 1em;
-        }
-    }
+  }
 }
