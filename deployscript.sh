@@ -19,32 +19,5 @@ SCP_DIR="${SSH}:${THEME_DIR}"
 ##
 
 # Root files
-printf "Moving files at root\n"
-scp * ${SCP_DIR}/
-
-# Assets
-printf "Moving assets\n"
-scp -r assets/ ${SCP_DIR}/
-
-# Overrides
-printf "Moving overrides\n"
-scp -r override/ ${SCP_DIR}/
-
-# Setup
-printf "Moving setup files\n"
-scp -r setup/ ${SCP_DIR}/
-
-##
-# Remove src control files
-##
-
-printf "Removing .git folder\n"
-ssh ${SSH} "rm -rf ${THEME_DIR}/.git/"
-
-echo
-
-ssh ${SSH} ls -la ${THEME_DIR}
-
-echo
-
-printf "\nDeployment complete!\n"
+printf "Moving files\n"
+rsync -r --exclude 'node_modules' --exclude 'git' . ${SCP_DIR}

@@ -1,41 +1,47 @@
 .asd-blog-image {
-    float: left;
-    margin: 0.5em 1em;
+  float: left;
+  margin: 0.5em 1em;
 
-    @media (max-width: (0.5 * @pageWidth)) {
-        float: none;
-        text-align: center;
-    }
+  @media (max-width: (0.5 * @pageWidth)) {
+    float: none;
+    text-align: center;
+  }
 }
 
 .asdBlog-post {
+  border-bottom: 0;
+  margin: auto;
+  overflow: hidden;
+  padding: 1em 0;
 
-    margin: 0;
+  max-width: 40em;
 
-    overflow: hidden;
+  width: 100%;
 
-    padding: 1em 0;
+  > h2 a:hover {
+    text-decoration: none;
+  }
 
-    &~.asdBlog-post {
-        border-top: 1px solid #CCC;
-    }
+  & ~ .asdBlog-post {
+    border-top: 1px solid #cccccc;
+  }
 }
 
 .asdBlog-read-more {
-    clear: left;
+  clear: left;
 
-    > a {
-        .button();
-    }
+  > a {
+    .button();
+  }
 }
 
 .asdBlog-pagination {
-    a {
-        .button();
-    }
+  a {
+    .button();
+  }
 
-    li.active {
-        .button();
-        .button.disabled();
-    }
+  li.active {
+    .button();
+    .button.disabled();
+  }
 }
