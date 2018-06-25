@@ -1,195 +1,174 @@
 
 .ipWidget-Form {
+  display: flex;
+  text-align: left;
+
+  .ipwForm {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .ipwThankYou { /* mimicking the same styles as for form to keep message 'inside' the box */
+    align-items: center;
+    border: @lineWidth solid @frontColor2;
     display: flex;
+    padding: 1em;
+  }
 
-    text-align: left;
-
-    .ipwForm {
-        box-sizing: border-box;
-
-        margin: 0 auto;
-
-        width: 100%;
-    }
-
-    .ipwThankYou { /* mimicking the same styles as for form to keep message 'inside' the box */
-        align-items: center;
-
-        border: @lineWidth solid @frontColor2;
-
-        display: flex;
-
-        padding: 1em;
-    }
-
-    .footer {
-        color: #666;
-
-        font-size: 0.8em;
-
-        position: relative;
-
-        z-index: 10;
-    }
+  .footer {
+    color: #666666;
+    font-size: 0.8em;
+    position: relative;
+    z-index: 10;
+  }
 
 }
 
 .form-section {
-    align-items: center;
-
-    border: none;
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    justify-content: center;
+  align-items: center;
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .form-group {
-    box-sizing: border-box;
-
-    flex-grow: 1;
-
-    margin: 0.5em;
+  box-sizing: border-box;
+  flex-grow: 1;
+  margin: 0.5em 0;
 }
 
 .help-error {
-    color: @errorColor;
+  color: @errorColor;
 }
 
 .type-textarea {
-    flex-basis: 100%;
+  flex-basis: 100%;
 
-    textarea {
-        max-width: none;
-    }
+  textarea {
+    max-width: none;
+  }
 }
 
 @media (max-width: (0.5 * @pageWidth)) {
-    .form-group {
-        flex-basis: 20em;
-    }
+  .form-group {
+    flex-basis: 20em;
+  }
 }
 
 form {
-    display: block;
+  display: block;
+  margin: auto;
+  max-width: @moduleWidth;
+  width: 100%;
 
-    margin: auto;
-    max-width: @moduleWidth;
+  .form-group.type-info {
+    box-sizing: border-box;
+    font-size: 0.9em;
+    padding: 0 0 .5em;
+  }
 
-    width: 100%;
+  .live-helper {
+    display: none;
+  }
 
-    .form-group.type-info {
-        box-sizing: border-box;
-        font-size: 0.9em;
-
-        padding: 0 0 .5em;
-    }
-
-    .live-helper {
-        display: none;
-    }
-
-    .form-group {
-        box-sizing: border-box;
-    }
+  .form-group {
+    box-sizing: border-box;
+  }
 
 }
 
 fieldset {
-    box-sizing: border-box;
-    border: 0;
+  box-sizing: border-box;
+  border: 0;
 }
 
 form.vertical {
+  display: block;
+  margin: auto;
+
+  .form-section {
     display: block;
 
-    margin: auto;
-
-    .form-section {
-        display: block;
-
-        > legend {
-            box-sizing: border-box;
-            font-weight: 800;
-
-            text-align: center;
-
-            width: 100%;
-        }
+    > legend {
+      box-sizing: border-box;
+      font-weight: 800;
+      text-align: center;
+      width: 100%;
     }
+  }
 
-    .form-group.type-checkbox {
-        display: flex;
+  .form-group.type-checkbox {
+    display: flex;
 
-        input {
-            margin-left: 1em;
-        }
+    input {
+      margin-left: 1em;
     }
+  }
 }
 
 form.horizontal {
+  display: block;
+
+  fieldset,
+  .footer {
     display: block;
+  }
 
-    fieldset,
-    .footer {
-        display: block;
+  fieldset > .form-group {
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    max-width: 12em;
+  }
+
+  input:invalid + .help-error {
+    display: none;
+    &:before {
+      content: '';
     }
-
-    fieldset > .form-group {
-        display: block;
-        position: relative;
-        float: left;
-
-        width: 100%;
-        max-width: 12em;
-    }
-
-    input:invalid + .help-error {
-        display: none;
-        &:before {
-            content: '';
-        }
-    }
+  }
 }
 
 form.mailchimp-subscription {
 
-    fieldset {
-        width: 100%;
-        padding: 0;
+  fieldset {
+    width: 100%;
+    padding: 0;
 
-        > .form-group {
+    > .form-group {
 
-            &.type-submit,
-            &.type-email {
-                display: block;
-                clear: both;
-                max-width: none;
-            }
+      &.type-submit,
+      &.type-email {
+        display: block;
+        clear: both;
+        max-width: none;
+      }
 
-            &.type-text {
-                max-width: 45%;
-            }
+      &.type-text {
+        max-width: 45%;
+      }
 
-            &.name-lastName {
-                float: right;
-            }
-        }
+      &.name-lastName {
+        float: right;
+      }
     }
+  }
 
-    @media screen and (max-width: 30em) {
-        fieldset > .form-group {
+  @media screen and (max-width: 30em) {
+    fieldset > .form-group {
+      display: block;
+      float: none;
 
-            display: block;
-            float: none;
-
-            &.type-text,
-            &.name-lastName {
-                max-width: none;
-                float: none;
-            }
-        }
+      &.type-text,
+      &.name-lastName {
+        max-width: none;
+        float: none;
+      }
     }
+  }
 }
