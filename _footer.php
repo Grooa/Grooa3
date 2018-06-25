@@ -25,6 +25,14 @@
                                 <em>Twitter</em>
                             </a>
                         </li>
+                        <li>
+                            <a
+                                href="<?= ipGetThemeOption('ytUrl') ?>"
+                                class="share-youtube" rel="noopener" target="_blank">
+                                <img src="<?= ipThemeUrl('assets/img/youtube.svg') ?>" alt="Youtube">
+                                <em>YouTube</em>
+                            </a>
+                        </li>
                     </ul>
 
 				<?php	/* <a href="<?php echo ipGetThemeOption('rssUrl'); ?>"><img

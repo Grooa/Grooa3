@@ -46,6 +46,11 @@
           "label": "Twitter",
           "name": "twitterUrl",
           "type": "Url"
+        },
+        {
+          "label": "YouTube",
+          "name": "ytUrl",
+          "type": "Url"
         }
       ]
     },

@@ -1,141 +1,123 @@
 .ipWidget-ShareButtons {
-    text-align: center;
+  text-align: center;
 
-    a {
-        text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 }
 
 .socialshare {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  margin: auto auto;
+  max-width: 30em;
+  padding: 0 1em .5em;
+  position: relative;
+  width: 100%;
 
-    display: flex;
-
-    flex-wrap: wrap;
-
-    justify-content: center;
-
-    list-style-type: none;
-
-    margin: auto auto;
-    max-width: 30em;
-
-    padding: 0 1em .5em;
-    position: relative;
-
-    width: 100%;
-
-    &.thin {
-        margin: .5em auto;
-
-        padding: 0;
-
-        li {
-            flex: 0;
-        }
-
-        svg {
-            height: 20px;
-        }
-
-        a {
-            height: 35px;
-
-            justify-content: center;
-
-            padding: .5em 2em .5em 2em;
-
-            width: auto;
-        }
-    }
+  &.thin {
+    margin: .5em auto;
+    padding: 0;
 
     li {
-        box-shadow: @boxShadow;
-
-        flex: 1;
-
-        margin: .4em;
-
-        position: relative;
-
-        transition: @transition;
-
-        &:hover {
-            box-shadow: @boxShadowHover;
-        }
+      flex: 0;
     }
 
-    a,
-    a > img,
-    a > svg {
-        height: 20px;
+    svg {
+      height: 20px;
     }
 
     a {
-        align-items: center;
+      height: 35px;
+      justify-content: center;
+      padding: .5em 2em .5em 2em;
+      width: auto;
+    }
+  }
 
-        background-color: #AAA; // Default button color
-        box-sizing: border-box;
+  li {
+    box-shadow: @boxShadow;
+    flex: 1;
+    margin: .4em;
+    position: relative;
+    transition: @transition;
 
-        display: flex;
+    &:hover {
+      box-shadow: @boxShadowHover;
+    }
+  }
 
-        justify-content: space-between;
+  a,
+  a > img,
+  a > svg {
+    height: 20px;
+  }
 
-        height: 40px;
+  a {
+    align-items: center;
+    background-color: #aaaaaa; // Default button color
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    min-width: 7em;
+    padding: .5em;
+    text-decoration: none;
+    transition: all .2s ease;
+    width: 100%;
 
-        min-width: 7em;
-
-        padding: .5em;
-
-        text-decoration: none;
-        transition: all .2s ease;
-
-        width: 100%;
-
-        &:hover {
-            text-decoration: none;
-        }
-
-        > em {
-            color: @iconColor;
-
-            font-style: normal;
-            font-weight: 100;
-
-            text-align: right;
-        }
+    &:hover {
+      text-decoration: none;
     }
 
-    svg path {
-        fill: @iconColor;
+    > em {
+      color: @iconColor;
+      font-style: normal;
+      font-weight: 100;
+      text-align: right;
     }
+  }
+
+  svg path {
+    fill: @iconColor;
+  }
 }
 
-
 a.share-facebook {
-    background-color: #3b5998;
+  background-color: #3b5998;
 }
 
 a.share-facebook:hover {
-    background-color: #314A7E;
+  background-color: #314a7e;
 }
 
 a.share-linkedin {
-    background-color: #3A96C2;
+  background-color: #3a96c2;
 }
 
 a.share-linkedin:hover {
-    background-color: #007BB6;
+  background-color: #007bb6;
+}
+
+a.share-youtube {
+  background-color: #ff0000;
+}
+
+a.share-youtube:hover {
+  background-color: #ee0000;
 }
 
 .socialshare a.share-twitter {
-    background-color: #3aaae1; // Twitter color
+  background-color: #3aaae1; // Twitter color
 
-    &:hover {
-        background-color: #3397C7;
-    }
+  &:hover {
+    background-color: #3397c7;
+  }
 
-    img {
-        height: 30px;
-    }
+  img {
+    height: 30px;
+  }
 }
