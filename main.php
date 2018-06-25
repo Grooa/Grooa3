@@ -4,7 +4,7 @@
 
 <?php echo ipView('_header.php', array('headerClass' => ''))->render(); ?>
 
-<main>
+<main class="main">
     <?php if ($hasPageImage): ?>
         <div class="banner">
             <div class="image-container <?= !empty($useBlur) ? 'blurred' : '' ?>">
@@ -16,7 +16,9 @@
         </div>
     <?php endif; ?>
 
-	<?php echo ipBlock('main'); ?>
+	<div class="padded">
+        <?php echo ipBlock('main'); ?>
+    </div>
 </main>
 
 <?php echo ipView('_footer.php')->render(); ?>
