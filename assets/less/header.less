@@ -60,11 +60,16 @@ body > header {
 
 .logo {
   align-items: center;
+
   display: flex;
+
   justify-content: flex-start;
+
   padding: .5em 1em;
   position: relative;
+
   text-decoration: none;
+  transition: @transition;
 
   img {
     height: 4em;
@@ -73,14 +78,21 @@ body > header {
   h1,
   strong {
     color: @primaryColor;
+
     font-size: 2.7em;
     font-weight: 400;
+
     margin: 0;
+
     padding: 0;
+
     text-transform: uppercase;
+    transition: inherit;
   }
 
   &:hover {
+    background-color: #fefefe;
+
     text-decoration: none;
 
     svg,
@@ -88,6 +100,7 @@ body > header {
     strong {
       color: @primaryLighten;
       fill: @primaryLighten;
+      opacity: 0.9;
     }
   }
 }
@@ -127,7 +140,7 @@ ul.menu {
     text-decoration: none;
 
     &:hover {
-      text-decoration: none;
+      text-decoration: underline;
     }
 
   }
